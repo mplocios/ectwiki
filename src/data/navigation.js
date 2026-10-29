@@ -40,7 +40,6 @@ export const NAV = [
     { id: 'guides/chestshop', label: 'Chest Shops' },
     { id: 'guides/dimensionlock', label: 'Dimension Lock' },
     { id: 'guides/deathpenalty', label: 'Death Penalty' },
-    { id: 'guides/afkrewards', label: 'AFK Rewards' },
     { id: 'guides/renametoken', label: 'Rename Token' },
     { id: 'guides/dungeons', label: 'Dungeons' },
     { id: 'guides/party', label: 'Dungeon Party' },
