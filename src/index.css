@@ -99,6 +99,44 @@ body {
 .breadcrumb .current { color: var(--text); font-weight: 500; }
 .hamburger { display: none; background: none; border: none; color: var(--text); cursor: pointer; padding: 4px; }
 
+/* Header Search */
+.header-search { position: relative; margin-left: auto; }
+.header-search-input-wrap {
+  display: flex; align-items: center; gap: 6px;
+  background: rgba(255,255,255,0.06); border: 1px solid var(--border);
+  border-radius: 8px; padding: 0 10px; height: 34px; min-width: 200px;
+  transition: border-color 0.2s, background 0.2s;
+}
+.header-search-input-wrap:focus-within {
+  border-color: var(--accent, #f0c040); background: rgba(255,255,255,0.1);
+}
+.header-search-icon { color: var(--text-dim); flex-shrink: 0; }
+.header-search-input {
+  background: none; border: none; outline: none; color: var(--text);
+  font-size: 13px; width: 100%; font-family: inherit;
+}
+.header-search-input::placeholder { color: var(--text-dim); }
+.header-search-kbd {
+  font-size: 10px; color: var(--text-dim); background: rgba(255,255,255,0.08);
+  border: 1px solid var(--border); border-radius: 4px; padding: 1px 5px;
+  white-space: nowrap; flex-shrink: 0; pointer-events: none;
+}
+.header-search-dropdown {
+  position: absolute; top: calc(100% + 6px); right: 0; width: 300px;
+  background: #1a1d24; border: 1px solid var(--border); border-radius: 10px;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.5); overflow: hidden; z-index: 100;
+  padding: 4px;
+}
+.header-search-result {
+  display: flex; align-items: center; justify-content: space-between;
+  width: 100%; padding: 10px 12px; border: none; background: none;
+  color: var(--text); font-size: 13px; cursor: pointer; border-radius: 6px;
+  text-align: left; font-family: inherit; gap: 8px;
+}
+.header-search-result:hover, .header-search-result.active { background: rgba(255,255,255,0.08); }
+.header-search-result-label { font-weight: 500; }
+.header-search-result-parent { font-size: 11px; color: var(--text-dim); flex-shrink: 0; }
+
 .content { max-width: 780px; margin: 0 auto; padding: 40px 40px 80px; }
 
 /* Typography */
@@ -385,6 +423,9 @@ body {
   .main { margin-left: 0; }
   .main-header { padding: 0 16px; }
   .hamburger { display: flex; }
+  .header-search-input-wrap { min-width: 0; width: 120px; }
+  .header-search-kbd { display: none; }
+  .header-search-dropdown { width: calc(100vw - 32px); right: -16px; }
   .content { padding: 24px 16px 60px; }
   .content h1 { font-size: 22px; }
   .cmd-row { flex-direction: column; gap: 4px; }

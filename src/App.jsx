@@ -1,9 +1,105 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Sidebar from './components/Sidebar';
 import Breadcrumb from './components/Breadcrumb';
 import { HamburgerIcon } from './components/Icons';
 import PAGES from './data/pageRegistry';
+import { NAV } from './data/navigation';
+
+function flattenNav(items, parent = '') {
+  const result = [];
+  for (const item of items) {
+    result.push({ id: item.id, label: item.label, parent });
+    if (item.children) {
+      result.push(...flattenNav(item.children, item.label));
+    }
+  }
+  return result;
+}
+
+function HeaderSearch({ onNavigate }) {
+  const [query, setQuery] = useState('');
+  const [open, setOpen] = useState(false);
+  const [selected, setSelected] = useState(0);
+  const ref = useRef(null);
+  const inputRef = useRef(null);
+  const allPages = useMemo(() => flattenNav(NAV).filter(p => PAGES[p.id]), []);
+
+  const results = useMemo(() => {
+    if (!query.trim()) return [];
+    const q = query.toLowerCase();
+    return allPages.filter(p =>
+      p.label.toLowerCase().includes(q) || p.parent.toLowerCase().includes(q)
+    ).slice(0, 8);
+  }, [query, allPages]);
+
+  useEffect(() => { setSelected(0); }, [results]);
+
+  useEffect(() => {
+    const onClick = (e) => { if (ref.current && !ref.current.contains(e.target)) setOpen(false); };
+    document.addEventListener('mousedown', onClick);
+    return () => document.removeEventListener('mousedown', onClick);
+  }, []);
+
+  useEffect(() => {
+    const onKey = (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+        e.preventDefault();
+        inputRef.current?.focus();
+      }
+    };
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, []);
+
+  const pick = (id) => {
+    onNavigate(id);
+    setQuery('');
+    setOpen(false);
+    inputRef.current?.blur();
+  };
+
+  const onKeyDown = (e) => {
+    if (e.key === 'ArrowDown') { e.preventDefault(); setSelected(s => Math.min(s + 1, results.length - 1)); }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); setSelected(s => Math.max(s - 1, 0)); }
+    else if (e.key === 'Enter' && results[selected]) { pick(results[selected].id); }
+    else if (e.key === 'Escape') { setOpen(false); inputRef.current?.blur(); }
+  };
+
+  return (
+    <div className="header-search" ref={ref}>
+      <div className="header-search-input-wrap">
+        <svg className="header-search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input
+          ref={inputRef}
+          className="header-search-input"
+          type="text"
+          placeholder="Search..."
+          value={query}
+          onChange={e => { setQuery(e.target.value); setOpen(true); }}
+          onFocus={() => setOpen(true)}
+          onKeyDown={onKeyDown}
+        />
+        <kbd className="header-search-kbd">Ctrl K</kbd>
+      </div>
+      {open && results.length > 0 && (
+        <div className="header-search-dropdown">
+          {results.map((r, i) => (
+            <button
+              key={r.id}
+              className={`header-search-result${i === selected ? ' active' : ''}`}
+              onMouseEnter={() => setSelected(i)}
+              onClick={() => pick(r.id)}
+            >
+              <span className="header-search-result-label">{r.label}</span>
+              {r.parent && <span className="header-search-result-parent">{r.parent}</span>}
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
 
 const pageTransition = {
   initial: { opacity: 0, y: 12 },
@@ -94,6 +190,7 @@ export default function App() {
             <HamburgerIcon />
           </button>
           <Breadcrumb currentPage={currentPage} onNavigate={navigate} />
+          <HeaderSearch onNavigate={navigate} />
         </header>
 
         <div className="content" onClick={handleContentClick}>
