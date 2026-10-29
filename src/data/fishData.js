@@ -1052,7 +1052,7 @@ export const FISH_DATA = [
     allBiomes: false,
     texture: 'celestine.png',
     special: 'divine',
-    sellPrice: 400000,
+    sellPrice: 1000000,
   },
   {
     name: 'Deus Pisces',

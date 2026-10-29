@@ -76,7 +76,6 @@ const SPECIAL_FISH = {
     consumeMsg: 'The divine power surges through you...',
   },
   'Celestine': {
-    sellPrice: 1000000,
     catchRate: '0.05%',
     condition: 'Fish while having Levitation effect + standing on Powder Snow',
     method: 'You must defy gravity itself — rise without rising, stand upon ground that is not ground. Let the force that pulls you skyward meet the earth that swallows your feet. Between floating and sinking, in that impossible balance, she waits.',
