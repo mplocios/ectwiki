@@ -210,7 +210,7 @@ const SPECIAL_FISH = {
   },
   'Enchanted Bookfish': {
     catchRate: '0.05%',
-    condition: 'Fish while standing on a max-level Enchanting Table, holding Undeciphered Tome',
+    condition: 'Fish while standing on a max-level Enchanting Table, holding Legendary Undeciphered Tome',
     method: 'Stand where the greatest enchantments are channeled, surrounded by the wisdom of countless tomes. Hold an ancient, undeciphered text and cast your line. Only when surrounded by the peak of arcane knowledge does this living tome reveal itself.',
     lore: 'A fish made of enchanted pages. Some say it contains every spell ever written — and a few that were never meant to be read.',
     consumeEffect: [{ effect: '+100 Experience Levels', duration: 'Instant' }],
