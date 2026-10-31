@@ -1,7 +1,7 @@
-import { useState, useMemo } from 'react';
 import Callout from '../components/Callout';
 import ResponsiveTable from '../components/ResponsiveTable';
-import { FISH_DATA } from '../data/fishData';
+import enchantLavaFishing from '../assets/enchant-lava-fishing.png';
+import enchantVoidFishing from '../assets/enchant-void-fishing.png';
 
 const TIER_ORDER = ['Bronze', 'Silver', 'Gold', 'Diamond', 'Platinum', 'Mythical'];
 const TIER_COLORS = {
@@ -12,294 +12,13 @@ const TIER_COLORS = {
   Platinum: '#e5e4e2',
   Mythical: '#ff3333',
 };
-const TIER_BG = {
-  Bronze: 'rgba(205,127,50,0.10)',
-  Silver: 'rgba(192,192,192,0.10)',
-  Gold: 'rgba(184,134,11,0.10)',
-  Diamond: 'rgba(185,242,255,0.10)',
-  Platinum: 'rgba(229,228,226,0.10)',
-  Mythical: 'rgba(255,51,51,0.10)',
-};
 
 const CATCH_CHANCE = { Bronze: '60%', Silver: '20%', Gold: '5%', Diamond: '3%', Platinum: '1%', Mythical: '0.3%' };
 const SELL_PRICE = { Bronze: '⛂ 100', Silver: '⛂ 550', Gold: '⛂ 1,500', Diamond: '⛂ 5,000', Platinum: '⛂ 10,000', Mythical: '⛂ 25,000' };
 const ENTROPY = { Bronze: 20, Silver: 60, Gold: 150, Diamond: 200, Platinum: 800, Mythical: 2000 };
 const FISHING_XP = { Bronze: 75, Silver: 150, Gold: 300, Diamond: 700, Platinum: 1700, Mythical: 7500 };
 
-const SPECIAL_FISH = {
-  'Skyfall Leviathan': {
-    catchRate: '0.1%',
-    condition: 'Fish above Y=200 in an Ocean biome',
-    method: 'Only those who dare to fish among the clouds above the sea will ever see this creature. Rise far above the ocean\'s surface — higher than any tower — and cast your line into water that should not exist at such heights.',
-    lore: 'A colossal fish said to swim through the clouds. Fishermen who claim to have seen it are called mad — yet their nets always smell of rain.',
-    consumeEffect: [{ effect: 'Slow Falling', duration: '5 min' }, { effect: 'Levitation', duration: '3 sec' }],
-    consumeMsg: 'You feel lighter than air...',
-  },
-  'Sculk Devourer': {
-    catchRate: '0.1%',
-    condition: 'Fish below Y=0 in the Deep Dark',
-    method: 'Descend into the deepest silence beneath the world, where the ancient sculk grows and something terrible listens. Bring your own water to those forsaken depths — and pray that every cast does not become your last sound.',
-    lore: 'Born in the silence between heartbeats. It feeds on sound itself — or so the old miners whisper before they stop talking forever.',
-    consumeEffect: [{ effect: 'Darkness', duration: '10 sec' }, { effect: 'Night Vision', duration: '3 min 10 sec' }],
-    consumeMsg: 'Your eyes adjust to the darkness...',
-  },
-  'Infernal Serpent': {
-    catchRate: '0.1%',
-    condition: 'Fish in lava in a Nether biome',
-    method: 'Cast your rod not into water, but into the molten rivers of the underworld itself. Only those who can withstand the hellfire and brave the Nether\'s endless fury will pull this serpent from the flames.',
-    lore: 'Forged in the fires beneath the world. Its scales glow like magma, and its bite burns hotter than the sun.',
-    consumeEffect: [{ effect: 'Fire Resistance', duration: '10 min' }, { effect: 'Catches fire', duration: '3 sec' }],
-    consumeMsg: 'The flames burn... then embrace you.',
-  },
-  'Voidborn Angler': {
-    catchRate: '0.1%',
-    condition: 'Fish in The End dimension',
-    method: 'Beyond the dragon, beyond the portal, lies a realm of endless nothing. Carry the gift of water to a land that has never known it, and fish in a dimension where no fish should exist.',
-    lore: 'It drifts between the islands of nothing, feeding on the void between stars. To see it is to question what is real.',
-    consumeEffect: [{ effect: 'Slow Falling', duration: '3 min' }, { effect: 'Random Teleport', duration: '±10 blocks' }],
-    consumeMsg: 'Reality warps around you...',
-  },
-  'Frozen Deity': {
-    catchRate: '0.1%',
-    condition: 'Fish in a Frozen Ocean biome during rain/snow',
-    method: 'Seek the frozen seas at the edge of the world and wait for the sky to weep ice. Shatter the frozen surface, expose the dark waters beneath, and fish while the storm rages around you.',
-    lore: 'A crystalline fish that only appears when the sky weeps ice. Legends say it was the first fish ever frozen — and the last to thaw.',
-    consumeEffect: [{ effect: 'Slowness III', duration: '5 sec' }, { effect: 'Resistance II', duration: '3 min' }],
-    consumeMsg: 'Ice crystallizes around you...',
-  },
-  'Deus Pisces': {
-    catchRate: '0.05%',
-    condition: 'Fish at half a heart, no armor, during a thunderstorm',
-    method: 'Stand bare before the wrath of the sky with nothing to protect you — no armor, no safety. Let your life dwindle to its very last flicker, and in that moment between life and death, cast your line into the storm. Only at the edge of oblivion does this fish reveal itself.',
-    lore: 'An old fisherman once told me he saw a golden fish on the night he nearly died. He stood in the storm with nothing but his rod and his last breath. I never believed him. No one ever does.',
-    consumeEffect: [{ effect: 'Absorption IV', duration: '5 min' }, { effect: 'Regeneration III', duration: '30 sec' }, { effect: 'Lightning Strike', duration: 'Instant' }],
-    consumeMsg: 'The divine power surges through you...',
-  },
-  'Celestine': {
-    catchRate: '0.05%',
-    condition: 'Fish while having Levitation effect + standing on Powder Snow',
-    method: 'You must defy gravity itself — rise without rising, stand upon ground that is not ground. Let the force that pulls you skyward meet the earth that swallows your feet. Between floating and sinking, in that impossible balance, she waits.',
-    lore: 'She floats between heaven and earth, neither rising nor falling. The old man said she came to him on a winter night when the ground turned to cloud and the sky reached down to touch him.',
-    consumeEffect: [{ effect: 'Slow Falling', duration: '10 min' }, { effect: 'Speed II', duration: '5 min' }, { effect: 'Removes all negative effects', duration: 'Instant' }],
-    consumeMsg: 'A celestial warmth purifies your body...',
-  },
-  'Aetheris': {
-    catchRate: '0.05%',
-    condition: 'Fish while having Darkness effect at Light Level 0',
-    method: 'Conquer your fear and descend into total darkness underground, where an ancient presence constantly consumes your sight. Fish blind, in a place where no light has ever touched — and something far worse than any fish lurks nearby, listening to every sound you make.',
-    lore: 'There is no proof this fish exists. Only the story of an old man who fished his whole life in every ocean, river, and lake — and found it in the one place no light has ever touched. He never spoke of what else was down there.',
-    consumeEffect: [{ effect: 'Invisibility', duration: '5 min' }, { effect: 'Night Vision', duration: '5 min' }, { effect: 'Darkness', duration: '5 sec' }],
-    consumeMsg: 'You become one with the void...',
-  },
-  'Valor Fin': {
-    catchRate: '0.05%',
-    condition: 'On fire + Strength II active + No armor + Not sneaking',
-    method: 'Strip yourself bare of all protection and stand fearless in the flames. Let fire consume your flesh while the strength of battle courses through your veins. Do not cower, do not crouch — stand tall and cast your line. Only those brave enough to burn will ever hold this fish.',
-    lore: 'The bravest fisherman who ever lived didn\'t hide from the fire — he stood in it.',
-    consumeEffect: [{ effect: 'Resistance II', duration: '5 min' }, { effect: 'Strength II', duration: '5 min' }, { effect: 'Fire Resistance', duration: '5 min' }],
-    consumeMsg: 'The warrior\'s spirit burns within you...',
-  },
-  'Fata Morgana': {
-    catchRate: '0.05%',
-    condition: 'Desert biome + Raining + Freezing effect active',
-    method: 'Travel to the scorching desert and wait for the impossible — rain in a land that should never see it. But that alone is not enough. You must also be freezing, your body gripped by an unnatural cold in the hottest place on earth. When fire and ice collide in a place of illusions, the mirage becomes real.',
-    lore: 'The desert shows you what isn\'t there — and hides what is.',
-    consumeEffect: [{ effect: 'Invisibility', duration: '10 min' }, { effect: 'Speed III', duration: '5 min' }, { effect: 'Night Vision', duration: '10 min' }],
-    consumeMsg: 'You shimmer and fade like a desert mirage...',
-  },
-  'Aurelia': {
-    catchRate: '0.05%',
-    condition: 'Standing on Gold Block + Lucky Block in offhand + 10+ consecutive water above (no blocks blocking) + Nighttime',
-    method: 'Sink to the bottom of the deepest ocean you can find, and place a gold block beneath your feet. Hold a Lucky Block in your offhand as your charm against the deep. Wait for the sun to set and the world to go dark above you — with at least ten consecutive blocks of uninterrupted water towering over your head. Even a single non-water block breaks the chain, so make sure nothing obstructs the water column above you. Then, surrounded by the crushing weight of the ocean and standing on gold and fortune, cast your line upward into the darkness.',
-    lore: 'He sank to the bottom, stood on gold, clutched his last lucky charm, and cast his line into the dark above.',
-    consumeEffect: [{ effect: 'Regeneration III', duration: '2 min' }, { effect: 'Absorption V', duration: '10 min' }, { effect: 'Luck', duration: '10 min' }, { effect: 'Saturation V', duration: '30 sec' }],
-    consumeMsg: 'The Golden Blessing fills you with radiant life...',
-  },
-};
-
-function FishCard({ fish, onClick }) {
-  const isLeg = fish.special === 'legendary';
-  const isDiv = fish.special === 'divine';
-  const isSpecial = isLeg || isDiv;
-  const isSoon = fish.comingSoon;
-  const tierColor = isLeg ? '#ff8c00' : isDiv ? '#ffee00' : TIER_COLORS[fish.tier];
-  const tierBg = isLeg ? 'rgba(255,140,0,0.10)' : isDiv ? 'rgba(255,238,0,0.10)' : TIER_BG[fish.tier];
-  return (
-    <button
-      className={`fish-card${isSoon ? ' fish-card-soon' : ''}`}
-      onClick={() => onClick(fish)}
-      style={{
-        border: `1px solid ${isSoon ? 'rgba(255,238,0,0.15)' : isSpecial ? (isDiv ? 'rgba(255,238,0,0.3)' : 'rgba(255,140,0,0.3)') : 'var(--border)'}`,
-        background: isSoon ? 'rgba(255,238,0,0.03)' : isSpecial ? (isDiv ? 'rgba(255,238,0,0.05)' : 'rgba(255,140,0,0.05)') : 'var(--bg-card)',
-      }}
-    >
-      <div className="fish-card-img" style={isSoon ? { filter: 'grayscale(0.6) opacity(0.5)' } : undefined}>
-        {fish.image ? (
-          <img src={fish.image} alt={fish.name} loading="lazy" />
-        ) : (
-          <div className="fish-card-placeholder">?</div>
-        )}
-      </div>
-      <div className="fish-card-name">{fish.name}</div>
-      {isSoon ? (
-        <span className="fish-card-tier" style={{ color: '#888', background: 'rgba(136,136,136,0.12)', fontSize: 10, letterSpacing: '0.5px' }}>
-          COMING SOON
-        </span>
-      ) : (
-        <span className="fish-card-tier" style={{ color: tierColor, background: tierBg }}>
-          {isLeg ? 'Legendary' : isDiv ? 'Divine' : fish.tier}
-        </span>
-      )}
-    </button>
-  );
-}
-
-function FishModal({ fish, onClose }) {
-  if (!fish) return null;
-  const isLegendary = fish.special === 'legendary';
-  const isDivine = fish.special === 'divine';
-  const isSpecial = isLegendary || isDivine;
-  const isSoon = fish.comingSoon;
-  const tierLabel = isLegendary ? 'Legendary' : isDivine ? 'Divine' : fish.tier;
-  const details = SPECIAL_FISH[fish.name];
-
-  return (
-    <div className="fish-modal-overlay" onClick={onClose}>
-      <div className="fish-modal" onClick={e => e.stopPropagation()}>
-        <button className="fish-modal-close" onClick={onClose}>&times;</button>
-        {isSoon && (
-          <div style={{ background: 'rgba(255,238,0,0.10)', border: '1px solid rgba(255,238,0,0.25)', borderRadius: 8, padding: '8px 14px', marginBottom: 12, textAlign: 'center', fontSize: 13, color: '#ffee00', fontWeight: 600, letterSpacing: '0.5px' }}>
-            COMING SOON — This fish is not yet catchable
-          </div>
-        )}
-        <div className="fish-modal-header">
-          <div className="fish-modal-img" style={isSoon ? { filter: 'grayscale(0.4) opacity(0.7)' } : undefined}>
-            {fish.image ? <img src={fish.image} alt={fish.name} /> : <div className="fish-card-placeholder">?</div>}
-          </div>
-          <div>
-            <h3 style={{ color: isLegendary ? '#ff8c00' : isDivine ? '#ffee00' : TIER_COLORS[fish.tier], margin: 0 }}>{fish.name}</h3>
-            <span className="fish-card-tier" style={{ color: isLegendary ? '#ff8c00' : isDivine ? '#ffee00' : TIER_COLORS[fish.tier], background: isLegendary ? 'rgba(255,140,0,0.10)' : isDivine ? 'rgba(255,238,0,0.10)' : TIER_BG[fish.tier], marginTop: 4 }}>
-              {tierLabel}
-            </span>
-          </div>
-        </div>
-
-        {details ? (
-          <p className="fish-modal-desc fish-modal-lore">"{details.lore}"</p>
-        ) : fish.description && fish.description !== '???' ? (
-          <p className="fish-modal-desc">"{fish.description}"</p>
-        ) : null}
-
-        {isSpecial && details ? (
-          <div className="fish-modal-special">
-            <div className="fish-modal-mystery">
-              <span style={{ fontSize: 20 }}>{isDivine ? '☄' : '✨'}</span>
-              <div>
-                <strong style={{ color: isDivine ? '#ffee00' : '#ff8c00' }}>{isDivine ? 'Divine Fish' : 'Legendary Fish'}</strong>
-                <p>{details.condition}</p>
-              </div>
-            </div>
-            <div className="fish-modal-row">
-              <span className="fish-modal-label">Catch Rate</span>
-              <span style={{ color: isDivine ? '#ffee00' : '#ff8c00', fontWeight: 600 }}>{details.catchRate}</span>
-            </div>
-            {fish.sellPrice && (
-              <div className="fish-modal-row">
-                <span className="fish-modal-label">Sell Value</span>
-                <span className="badge gold">⛂ {fish.sellPrice.toLocaleString()}</span>
-              </div>
-            )}
-            <div className="fish-modal-row">
-              <span className="fish-modal-label">Entropy</span>
-              <span>{isDivine ? '16,500' : '6,500'}</span>
-            </div>
-            <div className="fish-modal-row">
-              <span className="fish-modal-label">Fishing XP</span>
-              <span>{isDivine ? '57,500' : '22,500'}</span>
-            </div>
-            <div className="fish-modal-method">
-              <strong>How to find it</strong>
-              <p>{details.method}</p>
-            </div>
-            {details.consumeEffect && (
-              <div className="fish-modal-consume">
-                <strong>When Consumed</strong>
-                <p style={{ fontStyle: 'italic', color: isDivine ? '#ffee00' : '#ff8c00', margin: '6px 0 8px' }}>"{details.consumeMsg}"</p>
-                <div className="fish-consume-effects">
-                  {details.consumeEffect.map((e, i) => (
-                    <div key={i} className="fish-consume-row">
-                      <span className="fish-consume-effect">{e.effect}</span>
-                      <span className="fish-consume-duration">{e.duration}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
-        ) : (
-          <div className="fish-modal-stats">
-            <div className="fish-modal-row">
-              <span className="fish-modal-label">Catch Chance</span>
-              <span>{CATCH_CHANCE[fish.tier]}</span>
-            </div>
-            <div className="fish-modal-row">
-              <span className="fish-modal-label">Sell Price</span>
-              <span>{SELL_PRICE[fish.tier]}</span>
-            </div>
-            <div className="fish-modal-row">
-              <span className="fish-modal-label">Entropy (Gut)</span>
-              <span>{ENTROPY[fish.tier].toLocaleString()}</span>
-            </div>
-            <div className="fish-modal-row">
-              <span className="fish-modal-label">Fishing XP</span>
-              <span>{FISHING_XP[fish.tier].toLocaleString()}</span>
-            </div>
-            <div className="fish-modal-row">
-              <span className="fish-modal-label">Biomes</span>
-              <span>{fish.allBiomes ? 'All Biomes' : fish.biomes}</span>
-            </div>
-            {fish.weather === 'rain' && (
-              <div className="fish-modal-row">
-                <span className="fish-modal-label">Weather</span>
-                <span>Only during rain</span>
-              </div>
-            )}
-            <div className="fish-modal-row">
-              <span className="fish-modal-label">When Consumed</span>
-              <span>Restores hunger</span>
-            </div>
-          </div>
-        )}
-      </div>
-    </div>
-  );
-}
-
 export default function Fishing() {
-  const [selectedFish, setSelectedFish] = useState(null);
-  const [activeTier, setActiveTier] = useState('all');
-  const [search, setSearch] = useState('');
-
-  const filtered = useMemo(() => {
-    let list = FISH_DATA;
-    if (activeTier !== 'all') {
-      if (activeTier === 'Legendary') {
-        list = list.filter(f => f.special === 'legendary');
-      } else if (activeTier === 'Divine') {
-        list = list.filter(f => f.special === 'divine');
-      } else {
-        list = list.filter(f => f.tier === activeTier && !f.special);
-      }
-    }
-    if (search) {
-      const q = search.toLowerCase();
-      list = list.filter(f => f.name.toLowerCase().includes(q));
-    }
-    return list;
-  }, [activeTier, search]);
-
-  const filterTabs = ['all', ...TIER_ORDER, 'Legendary', 'Divine'];
-
   return (
     <>
       <h1>Fishing</h1>
@@ -349,46 +68,10 @@ export default function Fishing() {
         </tbody>
       </table></ResponsiveTable>
 
-      <Callout type="info"><b>Legendary</b> and <b>Divine</b> fish are special Mythical-tier fish that cannot be caught through normal fishing. They require extreme locations or seemingly impossible conditions. Click on them in the collection below to see their requirements.</Callout>
+      <Callout type="info"><b>Legendary</b> and <b>Divine</b> fish are special Mythical-tier fish that cannot be caught through normal fishing. They require extreme locations or seemingly impossible conditions. See the <a href="#guides/fishcodex"><b>Fish Codex</b></a> for the full collection with sprites, details, and requirements.</Callout>
 
       <h2>Fish Collection</h2>
-      <p>Click any fish to see its details — biome, sell price, catch chance, and more.</p>
-
-      <div className="fish-filters">
-        <div className="fish-filter-tabs">
-          {filterTabs.map(t => (
-            <button
-              key={t}
-              className={`fish-filter-btn ${activeTier === t ? 'active' : ''}`}
-              onClick={() => setActiveTier(t)}
-              style={activeTier === t && t !== 'all' ? { color: TIER_COLORS[t] || '#ff6ec7', borderColor: TIER_COLORS[t] || '#ff6ec7' } : {}}
-            >
-              {t === 'all' ? 'All' : t}
-            </button>
-          ))}
-        </div>
-        <input
-          className="fish-search"
-          type="text"
-          placeholder="Search fish..."
-          value={search}
-          onChange={e => setSearch(e.target.value)}
-        />
-      </div>
-
-      <div className="fish-count">{filtered.length} fish</div>
-
-      <div className="fish-grid">
-        {filtered.map(f => (
-          <FishCard key={f.name} fish={f} onClick={setSelectedFish} />
-        ))}
-      </div>
-
-      {filtered.length === 0 && (
-        <p style={{ textAlign: 'center', color: 'var(--text-dim)', padding: 32 }}>No fish found matching your search.</p>
-      )}
-
-      <FishModal fish={selectedFish} onClose={() => setSelectedFish(null)} />
+      <p>Browse every fish species with sprites, stats, biomes, and click-to-view details in the <a href="#guides/fishcodex"><b>Fish Codex</b></a>.</p>
 
       <h2>Fishing Totem</h2>
       <p>The Fishing Totem is a placeable structure that provides powerful buffs while fishing. Unlock it at <b>Fishing Level 20</b>.</p>
@@ -486,11 +169,70 @@ export default function Fishing() {
       </table></ResponsiveTable>
       <Callout type="tip"><b>Tip:</b> Fishing near other players activates <b>Party Fishing</b> — you earn bonus Entropy and XP when multiple fishers are within 40 blocks. Up to 5 nearby players for full bonus. The <b>Entropy Hoarder</b> totem passive also multiplies Entropy by 1.25x.</Callout>
 
+      <h2>Special Enchantments</h2>
+      <p>Two unique fishing rod enchantments unlock entirely new fishing dimensions. These enchantments <b>cannot be found from enchanting tables or villagers</b> — they can only be obtained through <b>Legendary Undeciphered Books</b>.</p>
+
+      <Callout type="info"><b>Legendary Undeciphered Books</b> are rare drops from dungeon bosses and elite mobs. Take them to <b>Helix the Decipherer</b> in Extremia (Hub) to reveal their enchantment. There's a chance it could be Lava Fishing or Void Fishing!</Callout>
+
+      <h3>Lava Fishing</h3>
+      <div style={{ margin: '12px 0' }}><img src={enchantLavaFishing} alt="Lava Fisher enchanted book" style={{ borderRadius: 6, maxWidth: 280 }} loading="lazy" /></div>
+      <p>Allows you to cast your fishing rod into <b>lava</b> instead of water. This is required to fish in the Nether and catch lava-dwelling fish like the <b style={{ color: '#ff8c00' }}>Infernal Serpent</b>.</p>
+      <ul>
+        <li>Bring the enchanted book and your fishing rod to the <b>Enchantress NPC</b> to apply it — regular anvils won't work</li>
+        <li>You can cast your rod into lava anywhere, but <b>lava fish only bite in the Nether</b> — fishing in Overworld lava won't catch anything special</li>
+        <li>Some legendary and divine fish can only be caught with lava fishing</li>
+      </ul>
+
+      <h3>Void Fishing</h3>
+      <div style={{ margin: '12px 0' }}><img src={enchantVoidFishing} alt="Void Fisher enchanted book" style={{ borderRadius: 6, maxWidth: 280 }} loading="lazy" /></div>
+      <p>Allows you to cast your fishing rod into <b>the void</b> in The End dimension — no water needed. Just cast your line off the edge into nothingness.</p>
+      <ul>
+        <li>Bring the enchanted book and your fishing rod to the <b>Enchantress NPC</b> to apply it — regular anvils won't work</li>
+        <li>Void Fishing can only trigger at <b>Y level 20 and below in The End</b> — make sure you're fishing deep enough</li>
+        <li>Required to catch End-exclusive fish like <b style={{ color: '#ff8c00' }}>Voidborn Angler</b>, <b style={{ color: '#ff8c00' }}>The Fish of Cthulu</b>, and <b style={{ color: '#ff8c00' }}>Seven Finned Death</b></li>
+        <li>Fishing in regular water in The End will only give normal catches — you must fish in the void itself</li>
+      </ul>
+
+      <h2>Augments</h2>
+      <p>Augments are special upgrades you can apply to your fishing rod. Each augment has multiple levels — higher levels cost more Entropy and require a higher Fishing Level. Craft them with <code>/fish augment</code>.</p>
+
+      <Callout type="tip"><b>How to apply:</b> Craft an augment from <code>/fish augment</code>, then drag it onto your fishing rod in the Apply Augment menu. Each augment requires specific crafting materials, Entropy, and a minimum Fishing Level.</Callout>
+
+      <ResponsiveTable><table className="wiki-table">
+        <thead><tr><th>Augment</th><th>Effect</th><th>Max Lvl</th><th>Req. Level</th><th>Entropy Cost</th></tr></thead>
+        <tbody>
+          <tr><td style={{ fontWeight: 600 }}>Hot Spot</td><td>Chance to catch 2x fish per catch</td><td>13</td><td>10</td><td>50,000</td></tr>
+          <tr><td style={{ fontWeight: 600 }}>Saturate</td><td>Chance to auto-feed you when fishing</td><td>5</td><td>12</td><td>35,000</td></tr>
+          <tr><td style={{ fontWeight: 600 }}>Call of the Storm</td><td>Chance to catch 2x fish during rain (does not stack with Hot Spot)</td><td>5</td><td>12</td><td>40,000</td></tr>
+          <tr><td style={{ fontWeight: 600 }}>Sage</td><td>Bonus fishing plugin XP from catches</td><td>10</td><td>12</td><td>57,500</td></tr>
+          <tr><td style={{ fontWeight: 600 }}>Biome Disruption</td><td>Chance to catch fish from any biome, ignoring location</td><td>3</td><td>16</td><td>60,000</td></tr>
+          <tr><td style={{ fontWeight: 600 }}>Precision Cutting</td><td>Bonus Entropy from gutting fish</td><td>8</td><td>22</td><td>70,000</td></tr>
+          <tr><td style={{ fontWeight: 600 }}>Crab Bait</td><td>Multiplier on crab catch chance</td><td>5</td><td>25</td><td>40,000</td></tr>
+          <tr><td style={{ fontWeight: 600 }}>Intellect</td><td>Bonus XP from catching fish</td><td>10</td><td>25</td><td>50,000</td></tr>
+          <tr><td style={{ fontWeight: 600 }}>Perception</td><td>Bonus Entropy from catching fish</td><td>7</td><td>28</td><td>75,000</td></tr>
+          <tr><td style={{ fontWeight: 600 }}>Solar Rage</td><td>Bonus money from selling fish</td><td>5</td><td>35</td><td>75,000</td></tr>
+          <tr><td style={{ fontWeight: 600 }}>Trophy</td><td>Chance to profit from fish scales</td><td>6</td><td>35</td><td>60,000</td></tr>
+          <tr><td style={{ fontWeight: 600 }}>Master Fisherman</td><td>Increases chance to catch higher tier fish</td><td>20</td><td>45</td><td>120,000</td></tr>
+        </tbody>
+      </table></ResponsiveTable>
+
+      <h3>Crafting Materials</h3>
+      <p>Augments require special drop items that come from fishing-related mobs. Kill dolphins, squids, and crabs to collect these:</p>
+      <ul>
+        <li><b>Dolphin Tail</b> — dropped by dolphins (70% base chance)</li>
+        <li><b>Crab Claw</b> — dropped by crabs (20% base chance)</li>
+        <li><b>Crab Scale</b> — dropped by crabs (20% base chance)</li>
+        <li><b>Squid Tentacle</b> — dropped by squids (10% base chance)</li>
+      </ul>
+
+      <Callout type="info"><b>Looting enchant</b> increases drop rates for all crafting materials (up to Looting V). Spawner-spawned mobs do <b>not</b> drop these items.</Callout>
+
       <h2>Commands</h2>
       <div className="cmd-list">
         <div className="cmd-row"><code>/fish menu</code><span className="cmd-desc">Open the main Fishing menu</span></div>
         <div className="cmd-row"><code>/fish stats</code><span className="cmd-desc">View your fishing level, XP, and stats</span></div>
         <div className="cmd-row"><code>/fish codex</code><span className="cmd-desc">Browse your fish collection codex</span></div>
+        <div className="cmd-row"><code>/fishbook</code><span className="cmd-desc">Open your personal <a href="#guides/fishcodex">Fish Codex</a> tracker</span></div>
         <div className="cmd-row"><code>/fish shop</code><span className="cmd-desc">Sell your fish at the fish shop</span></div>
         <div className="cmd-row"><code>/fish gut</code><span className="cmd-desc">Open the gutting station for Entropy</span></div>
         <div className="cmd-row"><code>/fish totem</code><span className="cmd-desc">Manage your Fishing Totem</span></div>

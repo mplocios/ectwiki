@@ -10,6 +10,7 @@ import Tips from '../pages/Tips';
 import { Looloonah, Scout, Haven, Anika, Enchantress, Decipherer, TaskMaster, AstroTommy, Auctioneer } from '../pages/Npcs';
 import { Waystones, Rtp, Claims, Teams, Selling, Island, ChestShop, DimensionLock, DeathPenalty, AfkRewards, RenameToken, Dungeons, DungeonParty, LuckyBlock, PublicWarps, BedrockPlayers } from '../pages/Guides';
 import Fishing from '../pages/Fishing';
+import FishCodex from '../pages/FishCodex';
 import Faq from '../pages/Faq';
 import Support from '../pages/Support';
 
@@ -55,6 +56,7 @@ const PAGES = {
   'guides/luckyblock': LuckyBlock,
   'guides/publicwarps': PublicWarps,
   'guides/fishing': Fishing,
+  'guides/fishcodex': FishCodex,
   'help/bedrock-gui': BedrockPlayers,
   'npcs/auctioneer': Auctioneer,
   'help/faq': Faq,
