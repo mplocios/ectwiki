@@ -82,7 +82,7 @@ const SPECIAL_FISH = {
   },
   'Aetheris': {
     catchRate: '0.05%',
-    condition: 'Only appears in absolute nothingness',
+    condition: 'Fish at Light Level 0 while having Darkness effect',
     method: 'Where light has never reached and shadows consume your very sight, something ancient stirs. Only those who embrace total blindness in the deepest dark will feel its presence on the line.',
     lore: 'There is no proof this fish exists. Only the story of an old man who fished his whole life in every ocean, river, and lake — and found it in the one place no light has ever touched.',
     consumeEffect: [{ effect: 'Invisibility', duration: '5 min' }, { effect: 'Night Vision', duration: '5 min' }, { effect: 'Darkness', duration: '5 sec' }],
@@ -90,7 +90,7 @@ const SPECIAL_FISH = {
   },
   'Deus Pisces': {
     catchRate: '0.05%',
-    condition: 'Only appears to the desperate and unprotected',
+    condition: 'Fish at half a heart, no armor, during a thunderstorm',
     method: 'The god of fish does not appear to the prepared. Strip yourself of everything — armor, pride, even your health. Stand on the brink of death itself, bare and vulnerable, while the heavens rage above. Only then does divinity bite.',
     lore: 'A golden fish from the brink of death. It only reveals itself to those who have nothing left to lose.',
     consumeEffect: [{ effect: 'Absorption IV', duration: '5 min' }, { effect: 'Regeneration III', duration: '30 sec' }, { effect: 'Lightning Strike', duration: 'Instant' }],
@@ -98,7 +98,7 @@ const SPECIAL_FISH = {
   },
   'Celestine': {
     catchRate: '0.05%',
-    condition: 'Only appears between heaven and earth',
+    condition: 'Fish while having Levitation effect, standing on Powder Snow',
     method: 'This celestial being exists in the space between rising and falling, suspended where sky meets frozen ground. Defy gravity itself in a place where the earth is soft as clouds, and the heavens pull you upward.',
     lore: 'Between heaven and earth, neither rising nor falling. A being of pure light, frozen in the space between.',
     consumeEffect: [{ effect: 'Slow Falling', duration: '10 min' }, { effect: 'Speed II', duration: '5 min' }],
@@ -106,7 +106,7 @@ const SPECIAL_FISH = {
   },
   'Valor Fin': {
     catchRate: '0.05%',
-    condition: 'Only appears to the fearless and burning',
+    condition: 'Fish while on fire, with Strength effect, no armor, not sneaking',
     method: 'The bravest fisherman who ever lived didn\'t hide from the fire — he stood in it. He wore no armor, showed no fear, and let the flames take him. Cast your line while the fire consumes you, empowered and standing tall.',
     lore: 'The bravest fisherman who ever lived didn\'t hide from the fire — he stood in it.',
     consumeEffect: [{ effect: 'Resistance II', duration: '5 min' }, { effect: 'Strength II', duration: '5 min' }, { effect: 'Fire Resistance', duration: '5 min' }],
@@ -114,7 +114,7 @@ const SPECIAL_FISH = {
   },
   'Fata Morgana': {
     catchRate: '0.05%',
-    condition: 'Only appears where opposites collide',
+    condition: 'Fish in a Desert biome while raining with Freezing effect',
     method: 'Travel to the scorching desert and wait for the impossible — rain in a land that should never see it. You must also be freezing in the hottest place on earth. When fire and ice collide, the mirage becomes real.',
     lore: 'The desert shows you what isn\'t there — and hides what is.',
     consumeEffect: [{ effect: 'Invisibility', duration: '10 min' }, { effect: 'Speed III', duration: '5 min' }, { effect: 'Night Vision', duration: '10 min' }],
@@ -122,7 +122,7 @@ const SPECIAL_FISH = {
   },
   'Aurelia': {
     catchRate: '0.05%',
-    condition: 'Only appears to those who sink with fortune in hand',
+    condition: 'Fish while standing on Gold Block, Undeciphered Tome in offhand, 10+ water above, at night',
     method: 'He sank to the bottom, stood on a throne of precious metal, and clutched his last lucky charm. With nothing but ocean above and darkness around, he cast his line into the night — and the golden blessing answered.',
     lore: 'He sank to the bottom, stood on gold, clutched his last lucky charm, and cast his line into the dark above.',
     consumeEffect: [{ effect: 'Regeneration III', duration: '2 min' }, { effect: 'Absorption V', duration: '10 min' }, { effect: 'Luck', duration: '10 min' }, { effect: 'Saturation V', duration: '30 sec' }],
@@ -130,7 +130,7 @@ const SPECIAL_FISH = {
   },
   'The Fish of Cthulu': {
     catchRate: '0.1%',
-    condition: 'Only appears in the void beyond the dragon',
+    condition: 'Fish in The End dimension, below Y=20 (rare sub-roll)',
     method: 'Beyond the dragon lies an eldritch horror. Cast your line into the void between the islands, where reality itself unravels. Something ancient and terrible may answer — if you are unlucky enough.',
     lore: 'Something ancient and terrible lurks between the End islands, feeding on the void itself.',
     consumeEffect: [{ effect: 'Darkness', duration: '30 sec' }, { effect: 'Strength II', duration: '3 min' }, { effect: 'Nausea', duration: '10 sec' }],
@@ -138,7 +138,7 @@ const SPECIAL_FISH = {
   },
   'Seven Finned Death': {
     catchRate: '0.1%',
-    condition: 'Only appears in the void beyond the dragon',
+    condition: 'Fish in The End dimension, below Y=20 (rare sub-roll)',
     method: 'In The End, death takes many forms. Cast your line into the void — and pray that what bites isn\'t the seven-bladed horror that drifts between islands, leaving nothing alive in its wake.',
     lore: 'Seven fins, each one a blade. It drifts between End islands, leaving nothing alive in its wake.',
     consumeEffect: [{ effect: 'Wither', duration: '5 sec' }, { effect: 'Strength III', duration: '2 min' }, { effect: 'Resistance', duration: '2 min' }],
@@ -146,7 +146,7 @@ const SPECIAL_FISH = {
   },
   'Cloudfish': {
     catchRate: '0.1%',
-    condition: 'Only appears where the peaks touch the sky',
+    condition: 'Fish above Y=200 in a Mountain biome (peaks, meadow, grove)',
     method: 'Seek the highest mountain pools, where the peaks touch the clouds. It has never descended below — and neither should you.',
     lore: 'It swims through clouds at the top of the world, never descending below the mountain peaks.',
     consumeEffect: [{ effect: 'Slow Falling', duration: '10 min' }, { effect: 'Speed', duration: '5 min' }],
@@ -154,7 +154,7 @@ const SPECIAL_FISH = {
   },
   'Oarfish': {
     catchRate: '0.1%',
-    condition: 'Only appears in the deepest ocean trenches',
+    condition: 'Fish in a Deep Ocean biome below Y=20',
     method: 'Dive to the very bottom of the deepest ocean, where sunlight is a forgotten memory. Only the brave who fish at the ocean floor will ever glimpse the longest fish in the sea.',
     lore: 'The longest fish in the sea, glimpsed only by those brave enough to fish at the ocean floor.',
     consumeEffect: [{ effect: 'Dolphin\'s Grace', duration: '5 min' }, { effect: 'Water Breathing', duration: '5 min' }],
@@ -162,7 +162,7 @@ const SPECIAL_FISH = {
   },
   'Fishron': {
     catchRate: '0.1%',
-    condition: 'Only appears when lightning meets the sea',
+    condition: 'Fish in an Ocean biome during a Thunderstorm',
     method: 'When the heavens rage and lightning strikes the ocean, a dragon-fish stirs beneath the waves. Its scales crackle with electricity — you\'ll know when it bites.',
     lore: 'Half dragon, half fish, born of lightning striking the ocean. Its scales crackle with electricity.',
     consumeEffect: [{ effect: 'Strength II', duration: '3 min' }, { effect: 'Resistance', duration: '3 min' }, { effect: 'Lightning Strike', duration: 'Instant' }],
@@ -170,7 +170,7 @@ const SPECIAL_FISH = {
   },
   'King of the Pond': {
     catchRate: '0.1%',
-    condition: 'Only appears under moonlight in the swamp',
+    condition: 'Fish in a Swamp biome at Night',
     method: 'Every swamp has a king. He watches from below, and only the patient will earn an audience. Wait for the moon to rise over the murky waters.',
     lore: 'Every swamp has a king. He watches from below, and only the patient will earn an audience.',
     consumeEffect: [{ effect: 'Regeneration II', duration: '5 min' }, { effect: 'Saturation III', duration: '20 sec' }],
@@ -178,7 +178,7 @@ const SPECIAL_FISH = {
   },
   'The Sounding': {
     catchRate: '0.1%',
-    condition: 'Only appears in the deepest ocean trenches',
+    condition: 'Fish in a Deep Ocean biome below Y=20 (rare sub-roll)',
     method: 'A sound from the deep — low, resonant, ancient. Fish in the deepest waters, and if the stars align, the great whale-fish surfaces. The old sailors called it The Sounding.',
     lore: 'A sound from the deep — low, resonant, ancient. The old sailors called it The Sounding.',
     consumeEffect: [{ effect: 'Water Breathing', duration: '10 min' }, { effect: 'Night Vision', duration: '10 min' }, { effect: 'Dolphin\'s Grace', duration: '5 min' }],
@@ -186,7 +186,7 @@ const SPECIAL_FISH = {
   },
   'Fishbrine': {
     catchRate: '0.05%',
-    condition: 'Only appears to burning ghosts in the deep dark',
+    condition: 'Fish while invisible, on fire, below Y=20, at night',
     method: 'They say if you become something between alive and dead — unseen, burning, deep beneath the world where no sun reaches — something impossible bites. Fish as a ghost in flames, when the world above sleeps.',
     lore: 'They say if you fish while invisible and burning deep underground at night, something impossible bites.',
     consumeEffect: [{ effect: 'Invisibility', duration: '5 min' }, { effect: 'Fire Resistance', duration: '5 min' }, { effect: 'Catches fire', duration: '5 sec' }],
@@ -194,7 +194,7 @@ const SPECIAL_FISH = {
   },
   'Yeti Crab': {
     catchRate: '0.05%',
-    condition: 'Only appears where fire meets the frozen deep',
+    condition: 'Fish in Ocean biome, below Y=20, with lava within 5 blocks',
     method: 'Where boiling lava meets freezing ocean, life finds a way. Seek the deepest hydrothermal vents — places where the earth bleeds heat into the coldest waters. The Yeti Crab thrives in the impossible.',
     lore: 'Where boiling lava meets freezing ocean, life finds a way. The Yeti Crab thrives in the impossible.',
     consumeEffect: [{ effect: 'Fire Resistance', duration: '10 min' }, { effect: 'Water Breathing', duration: '10 min' }, { effect: 'Resistance', duration: '5 min' }],
@@ -202,7 +202,7 @@ const SPECIAL_FISH = {
   },
   'The Uncatchable': {
     catchRate: '0.05%',
-    condition: 'Only appears to those faster than nature allows',
+    condition: 'Fish with very high movement speed',
     method: 'It has never been caught — because no one was ever fast enough. Normal speed won\'t cut it. This fish only reveals itself to those moving far beyond what\'s natural. Find a way to go even faster.',
     lore: 'It has never been caught. Until now.',
     consumeEffect: [{ effect: 'Speed III', duration: '5 min' }, { effect: 'Jump Boost II', duration: '5 min' }],
@@ -210,7 +210,7 @@ const SPECIAL_FISH = {
   },
   'Enchanted Bookfish': {
     catchRate: '0.05%',
-    condition: 'Only appears atop the peak of arcane knowledge',
+    condition: 'Fish while standing on a max-level Enchanting Table, holding Undeciphered Tome',
     method: 'Stand where the greatest enchantments are channeled, surrounded by the wisdom of countless tomes. Hold an ancient, undeciphered text and cast your line. Only when surrounded by the peak of arcane knowledge does this living tome reveal itself.',
     lore: 'A fish made of enchanted pages. Some say it contains every spell ever written — and a few that were never meant to be read.',
     consumeEffect: [{ effect: '+100 Experience Levels', duration: 'Instant' }],
