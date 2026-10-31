@@ -53,10 +53,10 @@ export const RANK_TIERS = {
     name: 'Champion',
     color: '#60a5fa',
     ranks: [
-      { name: 'Champion IV', cost: '200,000', time: '300h', perks: '/heal command, Lucky Block x16', task: 'Kill 1 Blue Axolotl' },
-      { name: 'Champion III', cost: '300,000', time: '400h', perks: 'Lucky Block x32', task: 'Kill 100 Villagers (Adult) + Kill 10 Nitwits' },
-      { name: 'Champion II', cost: '500,000', time: '500h', perks: 'Lucky Block x48', task: '14 Labor Tasks (Mine Iron x300, Copper x500, Diamond x100, Coal x500, Redstone x200, Lapis x200, Stone x1000, Chop Logs x500, Catch Fish x1000, Plant Crops x500, Shear Sheep x200, Breed Animals x100, Ancient Debris x50, Nether Quartz x100)' },
-      { name: 'Champion I', cost: '750,000', time: '750h', perks: 'Lucky Block x64, Max rank!', task: 'Consume any Divine Fish' },
+      { name: 'Champion IV', cost: '200,000', time: '300h', perks: '/heal command, Ambyst Caller, Lucky Block x16', task: 'Kill 1 Blue Axolotl' },
+      { name: 'Champion III', cost: '300,000', time: '400h', perks: 'Mob Spawner of Choice, Lucky Block x32', task: 'Kill 100 Villagers (Adult) + Kill 10 Nitwits' },
+      { name: 'Champion II', cost: '500,000', time: '500h', perks: 'Terravore, Lucky Block x48', task: '14 Labor Tasks (Mine Iron x300, Copper x500, Diamond x100, Coal x500, Redstone x200, Lapis x200, Stone x1000, Chop Logs x500, Catch Fish x1000, Plant Crops x500, Shear Sheep x200, Breed Animals x100, Ancient Debris x50, Nether Quartz x100)' },
+      { name: 'Champion I', cost: '750,000', time: '750h', perks: 'Champion\'s Wing, Lucky Block x64, Max rank!', task: 'Consume any Divine Fish' },
     ],
   },
 };
