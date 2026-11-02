@@ -16,11 +16,11 @@ export default function Welcome() {
       <div className="card-grid cols-2">
         <div className="card">
           <div className="card-title">Java Edition</div>
-          <div className="card-text">Connect directly with your Minecraft Java client.<br /><br /><code>extremecraft.apexmc.co</code><br /><code>23.109.122.171:25576</code></div>
+          <div className="card-text">Connect directly with your Minecraft Java client.<br /><br /><code>play.extremecraft.fun</code><br /><code>104.234.6.183:25615</code></div>
         </div>
         <div className="card">
           <div className="card-title">Bedrock Edition</div>
-          <div className="card-text">Bedrock players connect via Geyser. Custom models and most features work cross-platform.<br /><br /><code>extremecraft.apexmc.co</code> Port: <code>9883</code></div>
+          <div className="card-text">Bedrock players connect via Geyser. Custom models and most features work cross-platform.<br /><br /><code>play.extremecraft.fun</code> Port: <code>19502</code></div>
         </div>
       </div>
 
