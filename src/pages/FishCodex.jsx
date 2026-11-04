@@ -122,7 +122,6 @@ const SPECIAL_FISH = {
   },
   'Aurelia': {
     catchRate: '0.05%',
-    condition: 'Stand on Gold Block, Lucky Block in offhand, 10+ continuous water above, nighttime',
     method: 'He sank to the bottom, stood on a throne of precious metal, and clutched his last lucky charm. With nothing but ocean above and darkness around, he cast his line into the night — and the golden blessing answered.',
     lore: 'He sank to the bottom, stood on gold, clutched his last lucky charm, and cast his line into the dark above.',
     consumeEffect: [{ effect: 'Regeneration III', duration: '2 min' }, { effect: 'Absorption V', duration: '10 min' }, { effect: 'Luck', duration: '10 min' }, { effect: 'Saturation V', duration: '30 sec' }],
@@ -297,12 +296,12 @@ function FishModal({ fish, onClose }) {
               <span style={{ fontSize: 20 }}>{isDivine ? '☄' : '✨'}</span>
               <div>
                 <strong style={{ color: isDivine ? '#ffee00' : '#ff8c00' }}>{isDivine ? 'Divine Fish' : 'Legendary Fish'}</strong>
-                <p>{details.condition}</p>
+                <p>{fish.catchCondition || details.condition}</p>
               </div>
             </div>
             <div className="fish-modal-row">
               <span className="fish-modal-label">Catch Rate</span>
-              <span style={{ color: isDivine ? '#ffee00' : '#ff8c00', fontWeight: 600 }}>{details.catchRate}</span>
+              <span style={{ color: isDivine ? '#ffee00' : '#ff8c00', fontWeight: 600 }}>{fish.catchRate || details.catchRate}</span>
             </div>
             {fish.sellPrice && (
               <div className="fish-modal-row">
