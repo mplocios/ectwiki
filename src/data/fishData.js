@@ -1019,8 +1019,8 @@ export const FISH_DATA = [
   {
     name: 'Aurelia',
     tier: 'Mythical',
-    description: 'The golden divine fish, drawn to fortune and light beneath the deep ocean night.',
-    biomes: 'Unknown',
+    description: 'Stand on a gold block, hold a Lucky Block in offhand, 10+ continuous water above, nighttime.',
+    biomes: 'Any',
     allBiomes: false,
     texture: 'aurelia.png',
     special: 'divine',
