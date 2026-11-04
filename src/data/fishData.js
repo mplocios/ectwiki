@@ -1024,7 +1024,7 @@ export const FISH_DATA = [
     allBiomes: false,
     texture: 'aurelia.png',
     special: 'divine',
-    sellPrice: 1000000,
+    sellPrice: 500000,
   },
   {
     name: 'Amaterasu Fish',
@@ -1052,7 +1052,7 @@ export const FISH_DATA = [
     allBiomes: false,
     texture: 'celestine.png',
     special: 'divine',
-    sellPrice: 400000,
+    sellPrice: 1000000,
   },
   {
     name: 'Deus Pisces',
@@ -1310,7 +1310,7 @@ export const FISH_DATA = [
     allBiomes: false,
     texture: 'the_sounding.png',
     special: 'legendary',
-    sellPrice: 90000,
+    sellPrice: 75000,
   },
   {
     name: 'Fishbrine',
@@ -1320,7 +1320,7 @@ export const FISH_DATA = [
     allBiomes: false,
     texture: 'fishbrine.png',
     special: 'divine',
-    sellPrice: 450000,
+    sellPrice: 300000,
   },
   {
     name: 'Yeti Crab',
@@ -1330,7 +1330,7 @@ export const FISH_DATA = [
     allBiomes: false,
     texture: 'yeti_crab.png',
     special: 'divine',
-    sellPrice: 500000,
+    sellPrice: 350000,
   },
   {
     name: 'The Uncatchable',
