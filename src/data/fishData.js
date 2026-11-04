@@ -1340,7 +1340,7 @@ export const FISH_DATA = [
     allBiomes: false,
     texture: 'the_uncatchable.png',
     special: 'divine',
-    sellPrice: 400000,
+    sellPrice: 800000,
   },
 
   {
