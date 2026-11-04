@@ -122,7 +122,7 @@ const SPECIAL_FISH = {
   },
   'Aurelia': {
     catchRate: '0.05%',
-    condition: 'Fish while standing on Gold Block, Undeciphered Tome in offhand, 10+ water above, at night',
+    condition: 'Stand on Gold Block, Lucky Block in offhand, 10+ continuous water above, nighttime',
     method: 'He sank to the bottom, stood on a throne of precious metal, and clutched his last lucky charm. With nothing but ocean above and darkness around, he cast his line into the night — and the golden blessing answered.',
     lore: 'He sank to the bottom, stood on gold, clutched his last lucky charm, and cast his line into the dark above.',
     consumeEffect: [{ effect: 'Regeneration III', duration: '2 min' }, { effect: 'Absorption V', duration: '10 min' }, { effect: 'Luck', duration: '10 min' }, { effect: 'Saturation V', duration: '30 sec' }],
