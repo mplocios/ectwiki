@@ -1363,14 +1363,14 @@ export const FISH_DATA = [
   {
     name: 'Yeti Crab',
     tier: 'Mythical',
-    description: 'Found near hydrothermal vents of the deep ocean, where hot and cold collide.',
+    description: 'Thrives in extreme heat near hydrothermal vents, feeding on organisms that only grow around deep-sea lava.',
     biomes: 'Ocean',
     allBiomes: false,
     texture: 'yeti_crab.png',
     special: 'divine',
     sellPrice: 350000,
     catchRate: '0.05%',
-    catchCondition: 'Fish in Ocean biome, below Y=20, with lava within 5 blocks',
+    catchCondition: 'Fish in Ocean biome, below Y=20, with at least 5 blocks of lava in every direction beneath you',
   },
   {
     name: 'The Uncatchable',
