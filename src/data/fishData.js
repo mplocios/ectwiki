@@ -1370,7 +1370,7 @@ export const FISH_DATA = [
     special: 'divine',
     sellPrice: 350000,
     catchRate: '0.05%',
-    catchCondition: 'Fish in Ocean biome, below Y=20, with at least 5 blocks of lava in every direction beneath you',
+    catchCondition: 'Fish in an Ocean biome below Y=20, with a large lava pool at least 5 blocks in every direction beneath you',
   },
   {
     name: 'The Uncatchable',
