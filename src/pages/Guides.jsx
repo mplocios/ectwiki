@@ -24,6 +24,8 @@ import pwarpCreatedMsg from '../assets/pwarp-created-msg.png';
 import pwarpSetPrice from '../assets/pwarp-set-price.png';
 import pwarpManageGui from '../assets/pwarp-manage-gui.png';
 import pwarpPriceUpdated from '../assets/pwarp-price-updated.png';
+import partyGuiSolo from '../assets/party-gui-solo.png';
+import partyGuiMembers from '../assets/party-gui-members.png';
 import partyListGui from '../assets/party-list-gui.png';
 
 export function Waystones() {
@@ -829,16 +831,20 @@ export function DungeonParty() {
       <p>You can only be in one party at a time — if you're already in a party, you'll need to leave it first.</p>
 
       <h2>Party List</h2>
-      <p>Type <code>/party list</code> to open the <b>Party Active List</b> GUI. This shows all currently active parties on the server.</p>
-      <img src={partyListGui} alt="Party Active List GUI" style={{ maxWidth: 380, borderRadius: 8, margin: '12px 0' }} />
+      <p>Type <code>/party list</code> to open the <b>Party Active List</b> GUI. This shows all currently active parties on the server. Hover over a party leader's head to see all members:</p>
+      <img src={partyListGui} alt="Party Active List GUI — hovering shows members" style={{ maxWidth: 380, borderRadius: 8, margin: '12px 0' }} />
       <ul>
-        <li>Each party is shown as the <b>leader's player head</b> with the party size.</li>
-        <li><b>Hover</b> over a head to see the leader and all current members.</li>
+        <li>Each party is shown as the <b>leader's player head</b> with the party size (e.g. 2/5).</li>
+        <li><b>Hover</b> over a head to see the leader and all current members listed below.</li>
         <li><b>Click</b> a head to send a join request to that party (only works if you're not already in a party).</li>
       </ul>
 
       <h2>Party GUI</h2>
       <p>Type <code>/party</code> with no arguments to open the party GUI. The GUI shows:</p>
+      <p>When you first create a party, you'll see only your own player head as the leader:</p>
+      <img src={partyGuiSolo} alt="Party GUI — solo leader" style={{ maxWidth: 380, borderRadius: 8, margin: '12px 0' }} />
+      <p>After another player joins your party, their head appears next to yours:</p>
+      <img src={partyGuiMembers} alt="Party GUI — with members" style={{ maxWidth: 380, borderRadius: 8, margin: '12px 0' }} />
       <ul>
         <li><b>Member heads</b> — Each party member's head is displayed in slots.</li>
         <li><b>Invite button</b> — Click to invite a new player. After clicking, type the player's name in chat. Type <b>cancel</b> to cancel.</li>
