@@ -24,6 +24,7 @@ import pwarpCreatedMsg from '../assets/pwarp-created-msg.png';
 import pwarpSetPrice from '../assets/pwarp-set-price.png';
 import pwarpManageGui from '../assets/pwarp-manage-gui.png';
 import pwarpPriceUpdated from '../assets/pwarp-price-updated.png';
+import partyListGui from '../assets/party-list-gui.png';
 
 export function Waystones() {
   return (
@@ -771,8 +772,12 @@ export function Dungeons() {
       <div className="cmd-list">
         <div className="cmd-row"><code>/party create</code><span className="cmd-desc">Create a new dungeon party</span></div>
         <div className="cmd-row"><code>/party invite &lt;player&gt;</code><span className="cmd-desc">Invite a player to your party</span></div>
+        <div className="cmd-row"><code>/party join &lt;player&gt;</code><span className="cmd-desc">Request to join a player's party</span></div>
+        <div className="cmd-row"><code>/party list</code><span className="cmd-desc">View all active parties</span></div>
         <div className="cmd-row"><code>/party leave</code><span className="cmd-desc">Leave the current party</span></div>
         <div className="cmd-row"><code>/party disband</code><span className="cmd-desc">Disband the party (leader only)</span></div>
+        <div className="cmd-row"><code>/pd join</code><span className="cmd-desc">Join your party's active dungeon</span></div>
+        <div className="cmd-row"><code>/pd rejoin</code><span className="cmd-desc">Rejoin after disconnecting</span></div>
       </div>
 
       <h2>Rewards</h2>
@@ -813,10 +818,24 @@ export function DungeonParty() {
         <li><b>By command</b> — Type <code>/party invite &lt;player&gt;</code> with the player's name.</li>
         <li><b>Through the GUI</b> — Open the party GUI with <code>/party</code>, click the <b>invite button</b>, then type the player's name in chat.</li>
       </ul>
-      <p>The invited player will receive a message and can type <code>/party accept</code> to join or <code>/party deny</code> to decline. Only the party leader can send invites. You cannot invite players who are already in a party or who already have a pending invite.</p>
+      <p>The invited player will receive a message and can type <code>/party accept</code> to join or <code>/party deny</code> to decline. Only the party leader can send invites. You cannot invite players who are already in a party. If the invited player missed the prompt, you can re-send the invite.</p>
 
       <h2>Joining a Party</h2>
-      <p>When someone invites you, you'll see a chat message with their name. Type <code>/party accept</code> to join their party or <code>/party deny</code> to decline. You can only be in one party at a time — if you're already in a party, you'll need to leave it first.</p>
+      <p>There are two ways to join a party:</p>
+      <ul>
+        <li><b>Accept an invite</b> — When someone invites you, you'll see a chat message. Type <code>/party accept</code> to join or <code>/party deny</code> to decline.</li>
+        <li><b>Request to join</b> — Type <code>/party join &lt;player&gt;</code> to send a join request to a party leader. The leader will see your request and can accept or deny it.</li>
+      </ul>
+      <p>You can only be in one party at a time — if you're already in a party, you'll need to leave it first.</p>
+
+      <h2>Party List</h2>
+      <p>Type <code>/party list</code> to open the <b>Party Active List</b> GUI. This shows all currently active parties on the server.</p>
+      <img src={partyListGui} alt="Party Active List GUI" style={{ maxWidth: 380, borderRadius: 8, margin: '12px 0' }} />
+      <ul>
+        <li>Each party is shown as the <b>leader's player head</b> with the party size.</li>
+        <li><b>Hover</b> over a head to see the leader and all current members.</li>
+        <li><b>Click</b> a head to send a join request to that party (only works if you're not already in a party).</li>
+      </ul>
 
       <h2>Party GUI</h2>
       <p>Type <code>/party</code> with no arguments to open the party GUI. The GUI shows:</p>
@@ -844,7 +863,7 @@ export function DungeonParty() {
       <h2>Entering Dungeons</h2>
       <p>When the party leader enters a dungeon through the Dungeon Master NPC, all party members are <b>automatically teleported</b> into the same dungeon instance. Members don't need to do anything — just stay in the party and the leader handles entry.</p>
 
-      <Callout type="tip"><b>Rejoining a dungeon:</b> If you disconnect while inside a dungeon, you have <b>5 minutes</b> to reconnect. Once back online, use <code>/pd rejoin</code> to teleport back into the dungeon where you left off.</Callout>
+      <Callout type="tip"><b>Rejoining a dungeon:</b> If you disconnect while inside a dungeon, you have <b>5 minutes</b> to reconnect. Once back online, use <code>/pd rejoin</code> or <code>/pd join</code> to teleport back into the dungeon where you left off.</Callout>
 
       <h2>Offline Handling</h2>
       <ul>
@@ -857,12 +876,15 @@ export function DungeonParty() {
         <div className="cmd-row"><code>/party</code><span className="cmd-desc">Open the party GUI</span></div>
         <div className="cmd-row"><code>/party create</code><span className="cmd-desc">Create a new party (you become the leader)</span></div>
         <div className="cmd-row"><code>/party invite &lt;player&gt;</code><span className="cmd-desc">Invite a player to your party</span></div>
-        <div className="cmd-row"><code>/party accept</code><span className="cmd-desc">Accept a pending party invite</span></div>
-        <div className="cmd-row"><code>/party deny</code><span className="cmd-desc">Decline a pending party invite</span></div>
+        <div className="cmd-row"><code>/party join &lt;player&gt;</code><span className="cmd-desc">Request to join a player's party</span></div>
+        <div className="cmd-row"><code>/party list</code><span className="cmd-desc">Open the Party Active List GUI</span></div>
+        <div className="cmd-row"><code>/party accept</code><span className="cmd-desc">Accept a pending invite or join request</span></div>
+        <div className="cmd-row"><code>/party deny</code><span className="cmd-desc">Decline a pending invite or join request</span></div>
         <div className="cmd-row"><code>/party kick &lt;player&gt;</code><span className="cmd-desc">Kick a member from your party (leader only)</span></div>
         <div className="cmd-row"><code>/party transfer &lt;player&gt;</code><span className="cmd-desc">Transfer party leadership to another member</span></div>
         <div className="cmd-row"><code>/party leave</code><span className="cmd-desc">Leave the current party</span></div>
         <div className="cmd-row"><code>/party disband</code><span className="cmd-desc">Disband the entire party (leader only)</span></div>
+        <div className="cmd-row"><code>/pd join</code><span className="cmd-desc">Join your party's active dungeon</span></div>
         <div className="cmd-row"><code>/pd rejoin</code><span className="cmd-desc">Rejoin an active dungeon after disconnecting</span></div>
       </div>
 

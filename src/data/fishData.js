@@ -1382,7 +1382,7 @@ export const FISH_DATA = [
     special: 'divine',
     sellPrice: 800000,
     catchRate: '0.05%',
-    catchCondition: 'Fish with very high movement speed',
+    catchCondition: 'Must be sprinting at high speed while fishing — you cannot stand still',
   },
 
   {
