@@ -946,16 +946,16 @@ export function LuckyBlock() {
         <thead><tr><th>Category</th><th>Chance</th><th>Outcomes</th></tr></thead>
         <tbody>
           <tr><td><span style={{ color: '#FF55FF', fontWeight: 700 }}>Custom Elytra</span></td><td>0.001%</td><td>4 elytras</td></tr>
-          <tr><td><span style={{ color: '#FFAA00', fontWeight: 700 }}>Legendary</span></td><td>0.002%</td><td>5 rewards</td></tr>
-          <tr><td><span style={{ color: '#AA00AA', fontWeight: 700 }}>Epic</span></td><td>3%</td><td>8 rewards</td></tr>
-          <tr><td><span style={{ color: '#5555FF', fontWeight: 700 }}>Rare</span></td><td>6%</td><td>7 rewards</td></tr>
-          <tr><td><span style={{ color: '#55FF55', fontWeight: 700 }}>Common</span></td><td>12%</td><td>12 rewards</td></tr>
+          <tr><td><span style={{ color: '#FFAA00', fontWeight: 700 }}>Legendary</span></td><td>0.002%</td><td>8 rewards</td></tr>
+          <tr><td><span style={{ color: '#AA00AA', fontWeight: 700 }}>Epic</span></td><td>3%</td><td>14 rewards</td></tr>
+          <tr><td><span style={{ color: '#5555FF', fontWeight: 700 }}>Rare</span></td><td>6%</td><td>14 rewards</td></tr>
+          <tr><td><span style={{ color: '#55FF55', fontWeight: 700 }}>Common</span></td><td>12%</td><td>28 rewards</td></tr>
           <tr><td><span style={{ color: '#55FFFF', fontWeight: 700 }}>Blessed (Buffs)</span></td><td>14%</td><td>5 buffs</td></tr>
           <tr><td colSpan={3} style={{ textAlign: 'center', fontWeight: 700, background: 'rgba(255,170,0,0.1)' }}>Coin Jackpots (separate rolls)</td></tr>
           <tr><td><span style={{ color: '#FFAA00', fontWeight: 700 }}>Mythic Coins</span></td><td>0.001%</td><td>2,000,000 - 5,000,000</td></tr>
           <tr><td><span style={{ color: '#FFAA00', fontWeight: 700 }}>Legendary Coins</span></td><td>0.002%</td><td>500,000 - 1,000,000</td></tr>
-          <tr><td><span style={{ color: '#AA00AA', fontWeight: 700 }}>Epic Coins</span></td><td>1%</td><td>5,000 - 25,000</td></tr>
-          <tr><td><span style={{ color: '#5555FF', fontWeight: 700 }}>Rare Coins</span></td><td>3%</td><td>100 - 2,000</td></tr>
+          <tr><td><span style={{ color: '#AA00AA', fontWeight: 700 }}>Epic Coins</span></td><td>3%</td><td>10,000 - 100,000</td></tr>
+          <tr><td><span style={{ color: '#5555FF', fontWeight: 700 }}>Rare Coins</span></td><td>6%</td><td>50 - 5,000</td></tr>
           <tr><td colSpan={3} style={{ textAlign: 'center', fontWeight: 700, background: 'rgba(255,85,85,0.1)' }}>Bad Outcomes</td></tr>
           <tr><td><span style={{ color: '#FF5555', fontWeight: 700 }}>Unlucky (Debuffs)</span></td><td>22%</td><td>8 debuffs</td></tr>
           <tr><td><span style={{ color: '#FF5555', fontWeight: 700 }}>Environment Hazards</span></td><td>17%</td><td>6 hazards</td></tr>
@@ -998,6 +998,9 @@ export function LuckyBlock() {
           <tr><td>Nether Star</td><td>x1</td></tr>
           <tr><td>Diamond Block</td><td>x1</td></tr>
           <tr><td>Netherite Block</td><td>x1</td></tr>
+          <tr><td>Enchanted Golden Apple</td><td>4x</td></tr>
+          <tr><td>Netherite Upgrade Smithing Template</td><td>x1</td></tr>
+          <tr><td>Netherite Sword + Chestplate</td><td>Unenchanted set</td></tr>
         </tbody>
       </table></ResponsiveTable>
 
@@ -1013,6 +1016,12 @@ export function LuckyBlock() {
           <tr><td>Legendary Tome</td><td>x1</td></tr>
           <tr><td>Rare Tome</td><td>1-2x</td></tr>
           <tr><td>Netherite Ingot</td><td>1-2x</td></tr>
+          <tr><td>Max Enchanted Diamond Sword</td><td>Sharpness V, Fire Aspect II, Unbreaking III, Looting III</td></tr>
+          <tr><td>Max Enchanted Diamond Pickaxe</td><td>Efficiency V, Unbreaking III, Fortune III</td></tr>
+          <tr><td>Max Enchanted Diamond Armor (Chest + Legs)</td><td>Protection IV, Unbreaking III</td></tr>
+          <tr><td>Max Enchanted Diamond Armor (Helm + Boots)</td><td>Protection IV, Feather Falling IV, Unbreaking III</td></tr>
+          <tr><td>Mace</td><td>x1</td></tr>
+          <tr><td>Enchanted Golden Apple</td><td>2x</td></tr>
         </tbody>
       </table></ResponsiveTable>
 
@@ -1027,6 +1036,13 @@ export function LuckyBlock() {
           <tr><td>Common Tome</td><td>1-2x</td></tr>
           <tr><td>Diamonds</td><td>8x</td></tr>
           <tr><td>Ancient Debris</td><td>2-4x</td></tr>
+          <tr><td>Diamond Sword</td><td>Sharpness III, Unbreaking II</td></tr>
+          <tr><td>Diamond Pickaxe</td><td>Efficiency III, Unbreaking II</td></tr>
+          <tr><td>Diamond Chestplate</td><td>Protection II, Unbreaking II</td></tr>
+          <tr><td>Diamond Helmet + Boots</td><td>Protection II</td></tr>
+          <tr><td>Golden Apples + Golden Carrots</td><td>8x + 32x</td></tr>
+          <tr><td>Redstone Machines</td><td>Pistons, Sticky Pistons, Observers</td></tr>
+          <tr><td>Blaze Rods + Ghast Tears</td><td>4x + 2x</td></tr>
         </tbody>
       </table></ResponsiveTable>
 
@@ -1041,11 +1057,30 @@ export function LuckyBlock() {
           <tr><td>Steak</td><td>32x</td></tr>
           <tr><td>Golden Apples</td><td>16x</td></tr>
           <tr><td>Experience</td><td>500 XP</td></tr>
-          <tr><td>Ender Pearl</td><td>1-4x</td></tr>
+          <tr><td>Ender Pearl</td><td>x1</td></tr>
           <tr><td>Ender Chest</td><td>x1</td></tr>
           <tr><td>Sponges</td><td>4x</td></tr>
           <tr><td>Enchanted Iron Pickaxe</td><td>Efficiency III</td></tr>
           <tr><td>Enchanted Iron Sword</td><td>Sharpness II</td></tr>
+          <tr><td colSpan={2} style={{ textAlign: 'center', fontWeight: 600, color: '#AAAAAA', background: 'rgba(100,100,100,0.1)' }}>Mob Drops & Trash</td></tr>
+          <tr><td>Rotten Flesh</td><td>64x</td></tr>
+          <tr><td>Bones + String</td><td>32x + 16x</td></tr>
+          <tr><td>Gunpowder + Spider Eyes</td><td>16x + 8x</td></tr>
+          <tr><td>Feathers + Leather</td><td>32x + 16x</td></tr>
+          <tr><td>Phantom Membranes</td><td>16x</td></tr>
+          <tr><td>Ink Sacs + Prismarine Shards</td><td>16x + 8x</td></tr>
+          <tr><td colSpan={2} style={{ textAlign: 'center', fontWeight: 600, color: '#AAAAAA', background: 'rgba(100,100,100,0.1)' }}>Redstone & Resources</td></tr>
+          <tr><td>Coal</td><td>64x</td></tr>
+          <tr><td>Redstone Dust</td><td>32x</td></tr>
+          <tr><td>Repeaters + Comparators</td><td>4x + 2x</td></tr>
+          <tr><td>Hoppers</td><td>2x</td></tr>
+          <tr><td>Slime Balls</td><td>16x</td></tr>
+          <tr><td>Glowstone + Sea Lanterns</td><td>8x + 4x</td></tr>
+          <tr><td colSpan={2} style={{ textAlign: 'center', fontWeight: 600, color: '#AAAAAA', background: 'rgba(100,100,100,0.1)' }}>Food</td></tr>
+          <tr><td>Golden Carrots</td><td>16x</td></tr>
+          <tr><td>Bread</td><td>64x</td></tr>
+          <tr><td>Cooked Porkchops + Cooked Chicken</td><td>32x + 16x</td></tr>
+          <tr><td>Baked Potatoes + Apples</td><td>32x + 16x</td></tr>
         </tbody>
       </table></ResponsiveTable>
 
