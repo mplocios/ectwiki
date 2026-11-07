@@ -36,9 +36,9 @@ export function RanksOverview() {
           <tr><td>Knight IV</td><td>Kill 1 Wither</td></tr>
           <tr><td>Elite Knight IV</td><td>Kill 1 Warden</td></tr>
           <tr><td>Champion IV</td><td>Kill 1 Blue Axolotl</td></tr>
-          <tr><td>Champion III</td><td>Kill 100 Villagers (Adult) + Kill 10 Nitwits</td></tr>
-          <tr><td>Champion II</td><td>Complete 14 Labor Tasks (Mine Iron x300, Copper x500, Diamond x100, Coal x500, Redstone x200, Lapis x200, Stone x1000, Chop Logs x500, Catch Fish x1000, Plant Crops x500, Shear Sheep x200, Breed Animals x100, Ancient Debris x50, Nether Quartz x100)</td></tr>
-          <tr><td>Champion I</td><td>Consume any Divine Fish</td></tr>
+          <tr><td>Champion III</td><td>Kill 100 Villagers (Adult) + Kill 10 Nitwits + Complete 5 Dungeons (Any Difficulty)</td></tr>
+          <tr><td>Champion II</td><td>Complete 15 Labor Tasks (Mine Iron x300, Copper x500, Diamond x100, Coal x500, Redstone x200, Lapis x200, Stone x1000, Chop Logs x500, Catch Fish x1000, Plant Crops x500, Shear Sheep x200, Breed Animals x100, Ancient Debris x50, Nether Quartz x100, Complete 5 Dungeons Solo)</td></tr>
+          <tr><td>Champion I</td><td>Consume any Divine Fish + Break 1000 Lucky Blocks + Complete 10 Dungeons Solo (Master)</td></tr>
         </tbody>
       </table></ResponsiveTable>
       <p>Champion ranks are the highest tier. Each rank features unique quest requirements that test different aspects of your Minecraft mastery.</p>
