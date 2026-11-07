@@ -1082,7 +1082,7 @@ export const FISH_DATA = [
     special: 'divine',
     sellPrice: 550000,
     catchRate: '0.05%',
-    catchCondition: 'Fish in a Desert biome while raining with Freezing effect',
+    catchCondition: 'Fish in a Desert biome while it is raining and while freezing',
   },
   {
     name: 'Frozen Deity',
@@ -2610,8 +2610,8 @@ export const FISH_DATA = [
   {
     name: 'Zishlin',
     tier: 'Platinum',
-    description: 'A mysterious deep-water creature.',
-    biomes: 'OCEAN, DEEP_OCEAN, WARM_OCEAN, LUKEWARM_OCEAN, COLD_OCEAN, RIVER',
+    description: 'A fiery creature found only in Nether lava.',
+    biomes: 'NETHER_WASTES',
     allBiomes: false,
     texture: 'zishlin.png',
   },
