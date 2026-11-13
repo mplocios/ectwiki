@@ -47,6 +47,7 @@ export const NAV = [
     { id: 'guides/publicwarps', label: 'Public Warps' },
     { id: 'guides/fishing', label: 'Fishing' },
     { id: 'guides/fishcodex', label: 'Fish Codex' },
+    { id: 'guides/gemsockets', label: 'Gem Sockets' },
   ]},
   { id: 'help', label: 'Help', children: [
     { id: 'help/faq', label: 'FAQ' },

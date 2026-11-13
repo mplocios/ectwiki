@@ -728,6 +728,7 @@ export function Dungeons() {
         <tbody>
           <tr><td><span style={{ color: '#55FFFF', fontWeight: 700 }}>Snowcloak</span></td><td>1–4 players</td><td>3 lives</td><td>Normal / Master</td></tr>
           <tr><td><span style={{ color: '#FF5555', fontWeight: 700 }}>Lab of Horrors</span></td><td>1–5 players</td><td>3 lives</td><td>Normal / Master</td></tr>
+          <tr><td><span style={{ color: '#FFAA00', fontWeight: 700 }}>Hellz Citadel</span></td><td>1–5 players</td><td>3 lives</td><td>Normal / Master</td></tr>
         </tbody>
       </table></ResponsiveTable>
 
@@ -787,6 +788,9 @@ export function Dungeons() {
       <ul>
         <li><b>Loot Chest Drops</b> — Crafting materials like Cobalt, Mithril, Steel, and Magic Essence from chests along the way.</li>
         <li><b>Boss Drops</b> — The final boss drops rare dungeon-exclusive weapons and armor through a loot shower.</li>
+        <li><b>Gem Drops</b> — Normal mobs and bosses can drop <a href="#guides/gemsockets" style={{ color: 'var(--gold)' }}>gems</a> that you can socket into gear with socket slots. Master mode unlocks higher-tier gems.</li>
+        <li><b>Dungeon Gear</b> — Weapons and armor dropped in dungeons can come with <b>gem socket slots</b>, letting you customize them with gems for bonus stats.</li>
+        <li><b>Gem Remover</b> — Bosses have a 1% chance to drop a Gem Remover, which lets you safely remove a socketed gem without destroying it.</li>
         <li><b>XP</b> — Experience points from killing mobs and bosses.</li>
       </ul>
 
@@ -948,7 +952,7 @@ export function LuckyBlock() {
           <tr><td><span style={{ color: '#FF55FF', fontWeight: 700 }}>Custom Elytra</span></td><td>0.001%</td><td>4 elytras</td></tr>
           <tr><td><span style={{ color: '#FFAA00', fontWeight: 700 }}>Legendary</span></td><td>0.002%</td><td>8 rewards</td></tr>
           <tr><td><span style={{ color: '#AA00AA', fontWeight: 700 }}>Epic</span></td><td>3%</td><td>14 rewards</td></tr>
-          <tr><td><span style={{ color: '#5555FF', fontWeight: 700 }}>Rare</span></td><td>6%</td><td>14 rewards</td></tr>
+          <tr><td><span style={{ color: '#5555FF', fontWeight: 700 }}>Rare</span></td><td>6%</td><td>15 rewards</td></tr>
           <tr><td><span style={{ color: '#55FF55', fontWeight: 700 }}>Common</span></td><td>12%</td><td>28 rewards</td></tr>
           <tr><td><span style={{ color: '#55FFFF', fontWeight: 700 }}>Blessed (Buffs)</span></td><td>14%</td><td>5 buffs</td></tr>
           <tr><td colSpan={3} style={{ textAlign: 'center', fontWeight: 700, background: 'rgba(255,170,0,0.1)' }}>Coin Jackpots (separate rolls)</td></tr>
@@ -957,7 +961,7 @@ export function LuckyBlock() {
           <tr><td><span style={{ color: '#AA00AA', fontWeight: 700 }}>Epic Coins</span></td><td>3%</td><td>10,000 - 100,000</td></tr>
           <tr><td><span style={{ color: '#5555FF', fontWeight: 700 }}>Rare Coins</span></td><td>6%</td><td>50 - 5,000</td></tr>
           <tr><td colSpan={3} style={{ textAlign: 'center', fontWeight: 700, background: 'rgba(255,85,85,0.1)' }}>Bad Outcomes</td></tr>
-          <tr><td><span style={{ color: '#FF5555', fontWeight: 700 }}>Unlucky (Debuffs)</span></td><td>22%</td><td>8 debuffs</td></tr>
+          <tr><td><span style={{ color: '#FF5555', fontWeight: 700 }}>Unlucky (Debuffs)</span></td><td>22%</td><td>10 debuffs</td></tr>
           <tr><td><span style={{ color: '#FF5555', fontWeight: 700 }}>Environment Hazards</span></td><td>17%</td><td>6 hazards</td></tr>
           <tr><td><span style={{ color: '#FF5555', fontWeight: 700 }}>Mob Spawns</span></td><td>17%</td><td>8 mob types</td></tr>
           <tr><td><span style={{ color: '#FF55FF', fontWeight: 700 }}>Troll / Weird</span></td><td>9%</td><td>5 events</td></tr>
@@ -1043,6 +1047,7 @@ export function LuckyBlock() {
           <tr><td>Golden Apples + Golden Carrots</td><td>8x + 32x</td></tr>
           <tr><td>Redstone Machines</td><td>Pistons, Sticky Pistons, Observers</td></tr>
           <tr><td>Blaze Rods + Ghast Tears</td><td>4x + 2x</td></tr>
+          <tr><td>Shulker Shells</td><td>4-8x</td></tr>
         </tbody>
       </table></ResponsiveTable>
 
@@ -1108,6 +1113,8 @@ export function LuckyBlock() {
           <tr><td>Hunger III</td><td>10 seconds</td></tr>
           <tr><td>Wither I + Slowness I</td><td>5s / 10s</td></tr>
           <tr><td>Nausea I + Blindness I</td><td>10s / 5s</td></tr>
+          <tr><td>Endermite Swarm</td><td>10 endermites spawn on you</td></tr>
+          <tr><td>Silverfish Swarm</td><td>10 silverfish spawn on you</td></tr>
         </tbody>
       </table></ResponsiveTable>
 
@@ -1325,6 +1332,142 @@ export function BedrockPlayers() {
       <p>If you run into any display issues, please report them in our Discord so we can look into it.</p>
 
       <Callout type="tip"><b>Tip:</b> If a menu looks off, try closing and reopening it. Some GUIs may need a second attempt to render correctly on Bedrock.</Callout>
+    </>
+  );
+}
+
+export function GemSockets() {
+  return (
+    <>
+      <h1>Gem Sockets</h1>
+      <p className="page-desc">Socket gems into your gear to boost your stats. Higher-tier gems give bigger bonuses — but are harder to find and riskier to socket.</p>
+
+      <h2>What Are Gem Sockets?</h2>
+      <p>Some weapons and armor have <b>gem socket slots</b> — empty slots where you can insert gems to add bonus stats. Each gem gives a single stat boost, and the amount depends on the gem's quality tier.</p>
+      <p>To socket a gem, simply <b>drag the gem onto the item</b> in your inventory. If the item has an empty socket slot, the gem will be inserted. Each socket slot can only hold one gem.</p>
+
+      <Callout type="warn"><b>Warning:</b> Socketing is <b>not guaranteed</b> to succeed! Each gem has a <b>success rate</b> — if it fails, the gem is destroyed and the socket slot remains empty. Higher-tier gems have lower success rates, so think carefully before socketing a rare gem.</Callout>
+
+      <h2>Gem Tiers</h2>
+      <p>There are <b>7 quality tiers</b> for gems, from weakest to strongest. Higher tiers give bigger stat bonuses but have lower success rates when socketing.</p>
+
+      <ResponsiveTable><table className="wiki-table">
+        <thead><tr><th>Tier</th><th>Success Rate</th><th>How to Obtain</th></tr></thead>
+        <tbody>
+          <tr><td><span style={{color:'#AAAAAA'}}>Chipped</span></td><td><span className="badge green">95%</span></td><td>Dungeon drops (Normal & Master)</td></tr>
+          <tr><td><span style={{color:'#55FF55'}}>Flawed</span></td><td><span className="badge green">90%</span></td><td>Dungeon drops (Normal & Master)</td></tr>
+          <tr><td><span style={{color:'#5555FF'}}>Polished</span></td><td><span className="badge gold">80%</span></td><td>Dungeon drops (Normal & Master)</td></tr>
+          <tr><td><span style={{color:'#AA00AA'}}>Pristine</span></td><td><span className="badge gold">70%</span></td><td>Dungeon drops (Master only)</td></tr>
+          <tr><td><span style={{color:'#FFAA00'}}>Radiant</span></td><td><span className="badge red">55%</span></td><td>Dungeon drops (Master only)</td></tr>
+          <tr><td><span style={{color:'#FF55FF'}}>Abyssal</span></td><td><span className="badge red">40%</span></td><td>Special sources only</td></tr>
+          <tr><td><span style={{color:'#55FFFF'}}>Celestial</span></td><td><span className="badge red">25%</span></td><td>Special sources only</td></tr>
+        </tbody>
+      </table></ResponsiveTable>
+
+      <Callout type="tip"><b>Tip:</b> Abyssal and Celestial tier gems do <b>not</b> drop from dungeons. They come from special sources like events or unique rewards.</Callout>
+
+      <h2>How to Get Gems</h2>
+      <p>Gems drop from dungeon enemies. The drop chance and available tiers depend on the enemy type and dungeon difficulty:</p>
+
+      <ResponsiveTable><table className="wiki-table">
+        <thead><tr><th>Source</th><th>Drop Chance</th></tr></thead>
+        <tbody>
+          <tr><td>Normal mobs</td><td>5%</td></tr>
+          <tr><td>Bosses</td><td>10%</td></tr>
+        </tbody>
+      </table></ResponsiveTable>
+
+      <h3>Tier Distribution by Difficulty</h3>
+      <ResponsiveTable><table className="wiki-table">
+        <thead><tr><th>Tier</th><th>Normal Mode</th><th>Master Mode</th></tr></thead>
+        <tbody>
+          <tr><td><span style={{color:'#AAAAAA'}}>Chipped</span></td><td>70%</td><td>45%</td></tr>
+          <tr><td><span style={{color:'#55FF55'}}>Flawed</span></td><td>25%</td><td>30%</td></tr>
+          <tr><td><span style={{color:'#5555FF'}}>Polished</span></td><td>5%</td><td>15%</td></tr>
+          <tr><td><span style={{color:'#AA00AA'}}>Pristine</span></td><td>—</td><td>8%</td></tr>
+          <tr><td><span style={{color:'#FFAA00'}}>Radiant</span></td><td>—</td><td>2%</td></tr>
+        </tbody>
+      </table></ResponsiveTable>
+
+      <p>When a gem drops, it is randomly chosen from all 16 gem types with equal probability.</p>
+
+      <h3>Gem Remover</h3>
+      <p>Dungeon bosses also have a <b>1% chance</b> to drop a <b>Gem Remover</b> — a consumable item that lets you remove a socketed gem from your gear without destroying it. Use it on the item to pop a gem back out.</p>
+
+      <h2>Available Gems</h2>
+      <p>There are <b>16 gem types</b>, each boosting a single stat. The table below shows the stat bonus for every gem at each tier.</p>
+
+      <h3>Offensive Gems</h3>
+      <ResponsiveTable><table className="wiki-table">
+        <thead>
+          <tr>
+            <th>Gem</th><th>Stat</th>
+            <th><span style={{color:'#AAAAAA'}}>Chipped</span></th>
+            <th><span style={{color:'#55FF55'}}>Flawed</span></th>
+            <th><span style={{color:'#5555FF'}}>Polished</span></th>
+            <th><span style={{color:'#AA00AA'}}>Pristine</span></th>
+            <th><span style={{color:'#FFAA00'}}>Radiant</span></th>
+            <th><span style={{color:'#FF55FF'}}>Abyssal</span></th>
+            <th><span style={{color:'#55FFFF'}}>Celestial</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Ruby</td><td>ATK Damage</td><td>+1</td><td>+2</td><td>+3.5</td><td>+5</td><td>+7</td><td>+9</td><td>+12</td></tr>
+          <tr><td>Amber</td><td>Crit Rate</td><td>+1%</td><td>+2%</td><td>+3%</td><td>+5%</td><td>+7%</td><td>+9%</td><td>+12%</td></tr>
+          <tr><td>Garnet</td><td>Crit Damage</td><td>+2%</td><td>+4%</td><td>+6%</td><td>+9%</td><td>+13%</td><td>+17%</td><td>+22%</td></tr>
+          <tr><td>Citrine</td><td>ATK Speed</td><td>+0.5%</td><td>+1%</td><td>+1.5%</td><td>+2.5%</td><td>+3.5%</td><td>+5%</td><td>+7%</td></tr>
+          <tr><td>Topaz</td><td>PvE Damage</td><td>+1%</td><td>+2%</td><td>+3%</td><td>+5%</td><td>+7%</td><td>+9%</td><td>+12%</td></tr>
+          <tr><td>Amethyst</td><td>Skill Damage</td><td>+1%</td><td>+2%</td><td>+3%</td><td>+5%</td><td>+7%</td><td>+9%</td><td>+12%</td></tr>
+          <tr><td>Bloodstone</td><td>Lifesteal</td><td>+0.5%</td><td>+1%</td><td>+1.5%</td><td>+2%</td><td>+3%</td><td>+4%</td><td>+5.5%</td></tr>
+        </tbody>
+      </table></ResponsiveTable>
+
+      <h3>Defensive Gems</h3>
+      <ResponsiveTable><table className="wiki-table">
+        <thead>
+          <tr>
+            <th>Gem</th><th>Stat</th>
+            <th><span style={{color:'#AAAAAA'}}>Chipped</span></th>
+            <th><span style={{color:'#55FF55'}}>Flawed</span></th>
+            <th><span style={{color:'#5555FF'}}>Polished</span></th>
+            <th><span style={{color:'#AA00AA'}}>Pristine</span></th>
+            <th><span style={{color:'#FFAA00'}}>Radiant</span></th>
+            <th><span style={{color:'#FF55FF'}}>Abyssal</span></th>
+            <th><span style={{color:'#55FFFF'}}>Celestial</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Sapphire</td><td>Armor</td><td>+0.5</td><td>+1</td><td>+1.5</td><td>+2</td><td>+3</td><td>+4</td><td>+5.5</td></tr>
+          <tr><td>Onyx</td><td>Armor Toughness</td><td>+0.25</td><td>+0.5</td><td>+1</td><td>+1.5</td><td>+2</td><td>+3</td><td>+4</td></tr>
+          <tr><td>Diamond</td><td>Max HP</td><td>+0.5</td><td>+1</td><td>+1.5</td><td>+2</td><td>+3</td><td>+4</td><td>+6</td></tr>
+          <tr><td>Opal</td><td>Defense</td><td>+0.5</td><td>+1</td><td>+1.5</td><td>+2.5</td><td>+3.5</td><td>+5</td><td>+7</td></tr>
+          <tr><td>Rose Quartz</td><td>HP Regen</td><td>+0.1</td><td>+0.2</td><td>+0.35</td><td>+0.5</td><td>+0.75</td><td>+1.0</td><td>+1.5</td></tr>
+        </tbody>
+      </table></ResponsiveTable>
+
+      <h3>Utility Gems</h3>
+      <ResponsiveTable><table className="wiki-table">
+        <thead>
+          <tr>
+            <th>Gem</th><th>Stat</th>
+            <th><span style={{color:'#AAAAAA'}}>Chipped</span></th>
+            <th><span style={{color:'#55FF55'}}>Flawed</span></th>
+            <th><span style={{color:'#5555FF'}}>Polished</span></th>
+            <th><span style={{color:'#AA00AA'}}>Pristine</span></th>
+            <th><span style={{color:'#FFAA00'}}>Radiant</span></th>
+            <th><span style={{color:'#FF55FF'}}>Abyssal</span></th>
+            <th><span style={{color:'#55FFFF'}}>Celestial</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Jade</td><td>Speed</td><td>+0.5%</td><td>+1%</td><td>+1.5%</td><td>+2%</td><td>+3%</td><td>+4%</td><td>+5.5%</td></tr>
+          <tr><td>Emerald</td><td>Luck</td><td>+0.5</td><td>+1</td><td>+1.5</td><td>+2</td><td>+3</td><td>+4</td><td>+5</td></tr>
+          <tr><td>Pearl</td><td>Bonus XP</td><td>+1%</td><td>+2%</td><td>+3.5%</td><td>+5%</td><td>+7%</td><td>+10%</td><td>+14%</td></tr>
+          <tr><td>Tanzanite</td><td>CD Reduction</td><td>+0.5%</td><td>+1%</td><td>+1.5%</td><td>+2.5%</td><td>+3.5%</td><td>+5%</td><td>+7%</td></tr>
+        </tbody>
+      </table></ResponsiveTable>
+
+      <Callout type="tip"><b>Tip:</b> For maximum DPS, stack <b>Ruby</b> (ATK Damage), <b>Amber</b> (Crit Rate), and <b>Garnet</b> (Crit Damage) gems. For survivability, combine <b>Diamond</b> (Max HP) with <b>Rose Quartz</b> (HP Regen) and <b>Sapphire</b> (Armor).</Callout>
     </>
   );
 }
