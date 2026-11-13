@@ -1398,7 +1398,7 @@ export function GemSockets() {
       <p>There are <b>16 gem types</b>, each boosting a single stat. The table below shows the stat bonus for every gem at each tier.</p>
 
       <h3>Offensive Gems</h3>
-      <ResponsiveTable><table className="wiki-table">
+      <div style={{overflowX:'auto'}}><table className="wiki-table">
         <thead>
           <tr>
             <th>Gem</th><th>Stat</th>
@@ -1420,10 +1420,10 @@ export function GemSockets() {
           <tr><td>Amethyst</td><td>Skill Damage</td><td>+1%</td><td>+2%</td><td>+3%</td><td>+5%</td><td>+7%</td><td>+9%</td><td>+12%</td></tr>
           <tr><td>Bloodstone</td><td>Lifesteal</td><td>+0.5%</td><td>+1%</td><td>+1.5%</td><td>+2%</td><td>+3%</td><td>+4%</td><td>+5.5%</td></tr>
         </tbody>
-      </table></ResponsiveTable>
+      </table></div>
 
       <h3>Defensive Gems</h3>
-      <ResponsiveTable><table className="wiki-table">
+      <div style={{overflowX:'auto'}}><table className="wiki-table">
         <thead>
           <tr>
             <th>Gem</th><th>Stat</th>
@@ -1443,10 +1443,10 @@ export function GemSockets() {
           <tr><td>Opal</td><td>Defense</td><td>+0.5</td><td>+1</td><td>+1.5</td><td>+2.5</td><td>+3.5</td><td>+5</td><td>+7</td></tr>
           <tr><td>Rose Quartz</td><td>HP Regen</td><td>+0.1</td><td>+0.2</td><td>+0.35</td><td>+0.5</td><td>+0.75</td><td>+1.0</td><td>+1.5</td></tr>
         </tbody>
-      </table></ResponsiveTable>
+      </table></div>
 
       <h3>Utility Gems</h3>
-      <ResponsiveTable><table className="wiki-table">
+      <div style={{overflowX:'auto'}}><table className="wiki-table">
         <thead>
           <tr>
             <th>Gem</th><th>Stat</th>
@@ -1465,7 +1465,7 @@ export function GemSockets() {
           <tr><td>Pearl</td><td>Bonus XP</td><td>+1%</td><td>+2%</td><td>+3.5%</td><td>+5%</td><td>+7%</td><td>+10%</td><td>+14%</td></tr>
           <tr><td>Tanzanite</td><td>CD Reduction</td><td>+0.5%</td><td>+1%</td><td>+1.5%</td><td>+2.5%</td><td>+3.5%</td><td>+5%</td><td>+7%</td></tr>
         </tbody>
-      </table></ResponsiveTable>
+      </table></div>
 
       <Callout type="tip"><b>Tip:</b> For maximum DPS, stack <b>Ruby</b> (ATK Damage), <b>Amber</b> (Crit Rate), and <b>Garnet</b> (Crit Damage) gems. For survivability, combine <b>Diamond</b> (Max HP) with <b>Rose Quartz</b> (HP Regen) and <b>Sapphire</b> (Armor).</Callout>
     </>
