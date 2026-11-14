@@ -1472,3 +1472,98 @@ export function GemSockets() {
   );
 }
 
+export function SocketGuide() {
+  return (
+    <>
+      <h1>Socket System</h1>
+      <p className="page-desc">Learn how to add gem sockets to your gear, insert gems for stat bonuses, and remove them when you want to swap builds.</p>
+
+      <h2>What Are Sockets?</h2>
+      <p>Sockets are <b>empty slots</b> on your equipment where you can insert gems. Each socket holds one gem, and the gem's stat bonus is applied to that piece of gear. Not all items come with sockets — you need to add them yourself using a <b>Socket Chisel</b>.</p>
+
+      <h2>How to Get Sockets</h2>
+      <p>There are two ways to get sockets on your gear:</p>
+
+      <h3>1. Dungeon Drops</h3>
+      <p>Some equipment that drops from dungeons already comes with <b>1–2 socket slots</b> built in. These are ready to use — just insert a gem.</p>
+
+      <h3>2. Socket Chisel</h3>
+      <p>The <b>Socket Chisel</b> is a consumable item that lets you add a gem socket to any equipment piece. There are two types:</p>
+
+      <ResponsiveTable><table className="wiki-table">
+        <thead><tr><th>Chisel Type</th><th>Max Sockets</th><th>How to Obtain</th></tr></thead>
+        <tbody>
+          <tr><td><span style={{color:'#AA00AA'}}>Socket Chisel</span></td><td>Up to <b>2</b> sockets</td><td>Dungeon rewards, events</td></tr>
+          <tr><td><span style={{color:'#FFAA00'}}>Advanced Socket Chisel</span></td><td>Up to <b>3</b> sockets</td><td>Rare dungeon rewards, special events</td></tr>
+        </tbody>
+      </table></ResponsiveTable>
+
+      <Callout type="info"><b>Note:</b> A normal Socket Chisel cannot add sockets beyond 2. To get a 3rd socket, you need an <b>Advanced Socket Chisel</b>.</Callout>
+
+      <h3>Using the Socket Chisel</h3>
+      <ol>
+        <li><b>Right-click</b> the chisel in your hand to open the <b>Socket Station</b>. You can also use <code>/socketstation</code>.</li>
+        <li>Place your <b>equipment</b> in the left slot.</li>
+        <li>Place the <b>chisel</b> in the middle slot.</li>
+        <li>Click the <b>Add Socket</b> button (emerald) to add a new empty socket.</li>
+        <li>One chisel is consumed per socket added.</li>
+      </ol>
+
+      <Callout type="tip"><b>Tip:</b> The chisel works on any equipment — swords, armor, bows, axes, and more. It even works on vanilla items that aren't from MMOItems.</Callout>
+
+      <h2>How to Insert Gems</h2>
+      <p>Once your equipment has at least one empty socket, you can insert a gem:</p>
+      <ol>
+        <li>Open your <b>inventory</b>.</li>
+        <li><b>Drag the gem</b> onto the equipment item that has an empty socket.</li>
+        <li>If the socketing succeeds, the gem is inserted and its stat bonus is applied.</li>
+        <li>If it fails, the <b>gem is destroyed</b> and the socket stays empty.</li>
+      </ol>
+
+      <Callout type="warn"><b>Warning:</b> Socketing is <b>not guaranteed</b>! Each gem tier has a different success rate. Higher-tier gems are more likely to fail. See the <b>Gem Sockets</b> guide in the sidebar for full stat tables and success rates.</Callout>
+
+      <ResponsiveTable><table className="wiki-table">
+        <thead><tr><th>Gem Tier</th><th>Success Rate</th></tr></thead>
+        <tbody>
+          <tr><td><span style={{color:'#AAAAAA'}}>Chipped</span></td><td><span className="badge green">95%</span></td></tr>
+          <tr><td><span style={{color:'#55FF55'}}>Flawed</span></td><td><span className="badge green">90%</span></td></tr>
+          <tr><td><span style={{color:'#5555FF'}}>Polished</span></td><td><span className="badge gold">80%</span></td></tr>
+          <tr><td><span style={{color:'#AA00AA'}}>Pristine</span></td><td><span className="badge gold">70%</span></td></tr>
+          <tr><td><span style={{color:'#FFAA00'}}>Radiant</span></td><td><span className="badge red">55%</span></td></tr>
+          <tr><td><span style={{color:'#FF55FF'}}>Abyssal</span></td><td><span className="badge red">40%</span></td></tr>
+          <tr><td><span style={{color:'#55FFFF'}}>Celestial</span></td><td><span className="badge red">25%</span></td></tr>
+        </tbody>
+      </table></ResponsiveTable>
+
+      <h2>How to Remove Gems</h2>
+      <p>Want to swap your gems for a different build? You'll need a <b>Gem Remover</b>.</p>
+
+      <h3>What is a Gem Remover?</h3>
+      <p>The <b>Gem Remover</b> is a consumable item that removes <b>all socketed gems</b> from a piece of equipment. The gems are <b>returned to your inventory</b> — they are not destroyed.</p>
+
+      <h3>Using the Gem Remover</h3>
+      <ol>
+        <li>Open your <b>inventory</b>.</li>
+        <li><b>Drag the Gem Remover</b> onto the equipment that has socketed gems.</li>
+        <li>All gems are popped out and returned to your inventory.</li>
+        <li>The socket slots become empty again, ready for new gems.</li>
+      </ol>
+
+      <h3>How to Get a Gem Remover</h3>
+      <p>Gem Removers are rare drops from <b>dungeon bosses</b> with a <b>1% drop chance</b>. They can also appear as rewards from special events.</p>
+
+      <Callout type="tip"><b>Tip:</b> Gem Removers are valuable — don't waste them! Plan your gem setup carefully before socketing, especially with high-tier gems that have low success rates.</Callout>
+
+      <h2>Quick Reference</h2>
+      <ResponsiveTable><table className="wiki-table">
+        <thead><tr><th>Action</th><th>How</th><th>Cost</th></tr></thead>
+        <tbody>
+          <tr><td>Add a socket</td><td>Use Socket Chisel at Socket Station</td><td>1 Chisel per socket</td></tr>
+          <tr><td>Insert a gem</td><td>Drag gem onto socketed equipment</td><td>Gem consumed (may fail)</td></tr>
+          <tr><td>Remove gems</td><td>Drag Gem Remover onto equipment</td><td>1 Gem Remover (gems returned)</td></tr>
+        </tbody>
+      </table></ResponsiveTable>
+    </>
+  );
+}
+

@@ -48,6 +48,7 @@ export const NAV = [
     { id: 'guides/fishing', label: 'Fishing' },
     { id: 'guides/fishcodex', label: 'Fish Codex' },
     { id: 'guides/gemsockets', label: 'Gem Sockets' },
+    { id: 'guides/socketsystem', label: 'Socket System' },
   ]},
   { id: 'help', label: 'Help', children: [
     { id: 'help/faq', label: 'FAQ' },
