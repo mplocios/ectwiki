@@ -1509,7 +1509,7 @@ export function SocketGuide() {
         <li>One chisel is consumed per socket added.</li>
       </ol>
 
-      <Callout type="tip"><b>Tip:</b> The chisel works on any equipment — swords, armor, bows, axes, and more. It even works on vanilla items that aren't from MMOItems.</Callout>
+      <Callout type="tip"><b>Tip:</b> The chisel works on any weapons and equipment — swords, armor, bows, axes, and more.</Callout>
 
       <h2>How to Insert Gems</h2>
       <p>Once your equipment has at least one empty socket, you can insert a gem:</p>
@@ -1519,6 +1519,8 @@ export function SocketGuide() {
         <li>If the socketing succeeds, the gem is inserted and its stat bonus is applied.</li>
         <li>If it fails, the <b>gem is destroyed</b> and the socket stays empty.</li>
       </ol>
+
+      <Callout type="info"><b>Any gem works on any equipment!</b> Gems are not restricted by equipment type. For example, a <b>Ruby</b> gem (ATK Damage) can be socketed into armor — you'll still gain the bonus attack damage. This means you can stack offensive gems across all your gear for maximum effect.</Callout>
 
       <Callout type="warn"><b>Warning:</b> Socketing is <b>not guaranteed</b>! Each gem tier has a different success rate. Higher-tier gems are more likely to fail. See the <b>Gem Sockets</b> guide in the sidebar for full stat tables and success rates.</Callout>
 
