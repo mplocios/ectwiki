@@ -7,7 +7,7 @@ import { RanksOverview, PeasantTier, AdventurerTier, SquireTier, KnightTier, Eli
 import Trials from '../pages/Trials';
 import Commands from '../pages/Commands';
 import Tips from '../pages/Tips';
-import { Looloonah, Scout, Haven, Anika, Enchantress, Decipherer, TaskMaster, AstroTommy, Auctioneer } from '../pages/Npcs';
+import { Looloonah, Scout, Haven, Anika, Enchantress, Decipherer, TaskMaster, AstroTommy, Auctioneer, Samuel } from '../pages/Npcs';
 import { Waystones, Rtp, Claims, Teams, Selling, Island, ChestShop, DimensionLock, DeathPenalty, AfkRewards, RenameToken, Dungeons, DungeonParty, LuckyBlock, PublicWarps, BedrockPlayers, GemSockets, SocketGuide } from '../pages/Guides';
 import Fishing from '../pages/Fishing';
 import FishCodex from '../pages/FishCodex';
@@ -61,6 +61,7 @@ const PAGES = {
   'guides/socketsystem': SocketGuide,
   'help/bedrock-gui': BedrockPlayers,
   'npcs/auctioneer': Auctioneer,
+  'npcs/samuel': Samuel,
   'help/faq': Faq,
   'help/support': Support,
 };

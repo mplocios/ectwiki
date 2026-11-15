@@ -13,6 +13,10 @@ import npcAnika from '../assets/npc-anika.png';
 import npcKazren from '../assets/npc-kazren.png';
 import npcHelix from '../assets/npc-helix.png';
 import npcWayne from '../assets/auction-npc.png';
+import npcSamuel from '../assets/npc-samuel.png';
+import blacksmithGui from '../assets/blacksmith-gui.png';
+import blacksmithCraft from '../assets/blacksmith-craft.png';
+import blacksmithPreview from '../assets/blacksmith-preview.png';
 
 export function Looloonah() {
   return (
@@ -560,6 +564,49 @@ export function Auctioneer() {
         <li>Don't overprice common items — check the market first.</li>
         <li>You can have multiple items listed at the same time.</li>
       </ul>
+    </>
+  );
+}
+
+export function Samuel() {
+  return (
+    <>
+      <h1>Blacksmith — Samuel</h1>
+      <p className="page-desc">Samuel is the server's blacksmith. Bring him raw materials and he'll forge them into refined ingots, weapons, and armor for you.</p>
+
+      <div className="npc-portrait">
+        <img src={npcSamuel} alt="NPC Samuel — Blacksmith" />
+      </div>
+
+      <h2>What Does Samuel Do?</h2>
+      <p>Samuel runs the <b>Forge</b> — a crafting station where you can turn raw materials into useful items. As long as you have the required materials, Samuel can craft it for you. Each item takes a set amount of time to forge.</p>
+
+      <h2>How to Use the Forge</h2>
+      <p>Talk to Samuel to open the <b>Forge GUI</b>. You'll see three categories to choose from:</p>
+      <ul>
+        <li><b>Materials</b> — Refined ingots and crafting components</li>
+        <li><b>Swords</b> — Weapons forged from rare materials</li>
+        <li><b>Armor</b> — Protective gear crafted to order</li>
+      </ul>
+
+      <img src={blacksmithGui} alt="Forge GUI showing available items to craft" style={{maxWidth:'100%', borderRadius:'8px', margin:'1rem 0'}} />
+
+      <h3>Crafting an Item</h3>
+      <ol>
+        <li>Browse the categories and <b>click on the item</b> you want to forge.</li>
+        <li>A tooltip shows the <b>required materials</b> and <b>forge time</b>.</li>
+        <li>If you have all the materials, click <b>"Forge this item"</b> to start crafting.</li>
+        <li>The item appears on the right side of the GUI with a timer showing how long until it's done.</li>
+      </ol>
+
+      <img src={blacksmithCraft} alt="Forge tooltip showing materials needed and forge time" style={{maxWidth:'100%', borderRadius:'8px', margin:'1rem 0'}} />
+
+      <h3>Previewing Materials</h3>
+      <p>Not sure what materials you need? Click <b>"Preview"</b> on any item to see the exact ingredients laid out visually.</p>
+
+      <img src={blacksmithPreview} alt="Forge preview showing required materials" style={{maxWidth:'100%', borderRadius:'8px', margin:'1rem 0'}} />
+
+      <Callout type="tip"><b>Tip:</b> Samuel has more to offer than just basic materials — check out the Swords and Armor categories for powerful custom gear!</Callout>
     </>
   );
 }

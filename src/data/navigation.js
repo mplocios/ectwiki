@@ -21,6 +21,7 @@ export const NAV = [
   { id: 'tips', label: 'Tips & Tricks' },
   { id: 'npcs', label: 'NPC Stations', children: [
     { id: 'npcs/looloonah', label: 'Guide (Looloonah)' },
+    { id: 'npcs/samuel', label: 'Blacksmith (Samuel)' },
     { id: 'npcs/scout', label: 'Frontier Guide (Scout)' },
     { id: 'npcs/haven', label: 'Elysium Guide (Haven)' },
     { id: 'npcs/anika', label: 'Banker (Anika)' },
