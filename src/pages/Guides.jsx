@@ -1651,6 +1651,8 @@ export function Transmog() {
         <li><b>Cleansing Scrolls are important</b> — always have one on hand in case you want to swap or remove a skin.</li>
         <li>Everything is done by <b>dragging items in your inventory</b> — just pick up and drag.</li>
       </ul>
+
+      <Callout type="warn"><b>Important:</b> Please think carefully before applying a Transmog Scroll. If you accidentally certify the wrong item, its stats will be permanently lost. The administration is not responsible for items lost due to accidental transmog usage.</Callout>
     </>
   );
 }
