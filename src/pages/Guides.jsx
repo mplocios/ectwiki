@@ -1617,9 +1617,11 @@ export function Transmog() {
 
       <h3>Rules</h3>
       <ul>
+        <li>Transmog <b>only works on equipment</b> — swords, axes, pickaxes, shovels, hoes, spears, maces, bows, crossbows, tridents, shields, fishing rods, and all armor pieces.</li>
         <li>The skin is <b>consumed</b> after use.</li>
         <li>Your gear keeps <b>all of its original stats</b>.</li>
         <li>A lore line will appear on the item showing which skin is applied.</li>
+        <li>You <b>cannot transmog over an existing transmog</b> — use a Cleansing Scroll to remove it first.</li>
       </ul>
 
       <h2>How to Remove a Skin</h2>
