@@ -27,6 +27,9 @@ import pwarpPriceUpdated from '../assets/pwarp-price-updated.png';
 import partyGuiSolo from '../assets/party-gui-solo.png';
 import partyGuiMembers from '../assets/party-gui-members.png';
 import partyListGui from '../assets/party-list-gui.png';
+import transmogCertify from '../assets/transmog-certify.webm';
+import transmogApply from '../assets/transmog-apply.webm';
+import transmogRemove from '../assets/transmog-remove.webm';
 
 export function Waystones() {
   return (
@@ -1565,6 +1568,89 @@ export function SocketGuide() {
           <tr><td>Remove gems</td><td>Drag Gem Remover onto equipment</td><td>1 Gem Remover (gems returned)</td></tr>
         </tbody>
       </table></ResponsiveTable>
+    </>
+  );
+}
+
+export function Transmog() {
+  return (
+    <>
+      <h1>Transmogrification</h1>
+      <p className="page-desc">Change how your gear looks without changing its stats.</p>
+
+      <h2>What is Transmog?</h2>
+      <p>Transmogrification lets you change the <b>appearance</b> of your equipment while keeping all of its stats, enchantments, and functionality. Want your powerful diamond sword to look like a cool custom weapon? Transmog makes it happen.</p>
+
+      <h2>What You Need</h2>
+      <p>Visit the <b>Transmog NPC</b> to purchase the items you need:</p>
+      <ResponsiveTable><table className="wiki-table">
+        <thead><tr><th>Item</th><th>What It Does</th></tr></thead>
+        <tbody>
+          <tr><td><b>Transmog Scroll</b></td><td>Turns any item into a cosmetic skin</td></tr>
+          <tr><td><b>Cleansing Scroll</b></td><td>Removes a transmog from your gear, restoring its original look</td></tr>
+        </tbody>
+      </table></ResponsiveTable>
+
+      <h2>How to Create a Skin</h2>
+      <ol>
+        <li>Buy a <b>Transmog Scroll</b> from the Transmog NPC.</li>
+        <li>Open your inventory.</li>
+        <li>Pick up the Transmog Scroll.</li>
+        <li>Drag it onto the item you want to turn into a skin.</li>
+      </ol>
+      <p>The item will turn <b style={{ color: '#c084fc' }}>purple</b> and show its category (e.g. "Sword Transmog"). This is now your skin.</p>
+
+      <Callout type="warn"><b>Warning:</b> The item will lose all its stats, enchants, and become purely cosmetic. This cannot be undone. Only sacrifice items you are okay with losing.</Callout>
+
+      <video src={transmogCertify} autoPlay loop muted playsInline style={{ width: '100%', maxWidth: 600, borderRadius: 8, margin: '1rem 0' }} />
+
+      <h2>How to Apply a Skin</h2>
+      <ol>
+        <li>Open your inventory.</li>
+        <li>Pick up your <b>certified skin</b>.</li>
+        <li>Drag it onto the gear you want to restyle.</li>
+      </ol>
+
+      <video src={transmogApply} autoPlay loop muted playsInline style={{ width: '100%', maxWidth: 600, borderRadius: 8, margin: '1rem 0' }} />
+
+      <Callout type="warn"><b>Category Matching:</b> Skins are strictly locked to the same equipment type. A sword skin only works on swords, a helmet skin only on helmets, a chestplate skin only on chestplates, and so on. You cannot mix categories.</Callout>
+
+      <h3>Rules</h3>
+      <ul>
+        <li>The skin is <b>consumed</b> after use.</li>
+        <li>Your gear keeps <b>all of its original stats</b>.</li>
+        <li>A lore line will appear on the item showing which skin is applied.</li>
+      </ul>
+
+      <h2>How to Remove a Skin</h2>
+      <ol>
+        <li>Buy a <b>Cleansing Scroll</b> from the Transmog NPC.</li>
+        <li>Open your inventory.</li>
+        <li>Pick up the Cleansing Scroll.</li>
+        <li>Drag it onto your transmogged gear.</li>
+      </ol>
+      <p>Your item will return to its original appearance. The Cleansing Scroll is consumed.</p>
+
+      <video src={transmogRemove} autoPlay loop muted playsInline style={{ width: '100%', maxWidth: 600, borderRadius: 8, margin: '1rem 0' }} />
+
+      <Callout type="info"><b>Note:</b> If you want to apply a different skin, you must remove the current one with a Cleansing Scroll first.</Callout>
+
+      <h2>Quick Reference</h2>
+      <ResponsiveTable><table className="wiki-table">
+        <thead><tr><th>Action</th><th>What to Buy</th><th>What Happens</th></tr></thead>
+        <tbody>
+          <tr><td>Turn item into a skin</td><td>Transmog Scroll</td><td>Item becomes cosmetic (loses stats)</td></tr>
+          <tr><td>Apply skin to gear</td><td>— (use the skin directly)</td><td>Gear changes look, keeps stats</td></tr>
+          <tr><td>Remove a transmog</td><td>Cleansing Scroll</td><td>Gear returns to original look</td></tr>
+        </tbody>
+      </table></ResponsiveTable>
+
+      <h2>Tips</h2>
+      <ul>
+        <li><b>Choose your skins wisely</b> — certifying an item with a Transmog Scroll destroys its stats permanently.</li>
+        <li><b>Cleansing Scrolls are important</b> — always have one on hand in case you want to swap or remove a skin.</li>
+        <li>Everything is done by <b>dragging items in your inventory</b> — just pick up and drag.</li>
+      </ul>
     </>
   );
 }

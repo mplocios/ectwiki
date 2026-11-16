@@ -50,6 +50,7 @@ export const NAV = [
     { id: 'guides/fishcodex', label: 'Fish Codex' },
     { id: 'guides/gemsockets', label: 'Gem Sockets' },
     { id: 'guides/socketsystem', label: 'Socket System' },
+    { id: 'guides/transmog', label: 'Transmogrification' },
   ]},
   { id: 'help', label: 'Help', children: [
     { id: 'help/faq', label: 'FAQ' },
