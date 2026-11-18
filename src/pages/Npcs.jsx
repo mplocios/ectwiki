@@ -14,6 +14,7 @@ import npcKazren from '../assets/npc-kazren.png';
 import npcHelix from '../assets/npc-helix.png';
 import npcWayne from '../assets/auction-npc.png';
 import npcSamuel from '../assets/npc-samuel.png';
+import npcLiana from '../assets/npc-liana.png';
 import blacksmithGui from '../assets/blacksmith-gui.png';
 import blacksmithCraft from '../assets/blacksmith-craft.png';
 import blacksmithPreview from '../assets/blacksmith-preview.png';
@@ -607,6 +608,52 @@ export function Samuel() {
       <img src={blacksmithPreview} alt="Forge preview showing required materials" style={{maxWidth:'100%', borderRadius:'8px', margin:'1rem 0'}} />
 
       <Callout type="tip"><b>Tip:</b> Samuel has more to offer than just basic materials — check out the Swords and Armor categories for powerful custom gear!</Callout>
+    </>
+  );
+}
+
+export function Liana() {
+  return (
+    <>
+      <h1>Cosmetic Merchant — Liana</h1>
+      <p className="page-desc">Liana sells cosmetic items — weapon skins, armor transmogs, invisible gear, scrolls, and more.</p>
+
+      <div className="npc-portrait">
+        <img src={npcLiana} alt="NPC Liana — Cosmetic Merchant" />
+      </div>
+
+      <h2>What Does Liana Sell?</h2>
+      <p>Liana is the server's <b>Cosmetic Merchant</b>. She runs a shop where you can spend <b>Dungeon Coins</b> and <b>Hell Dungeon Coins</b> on cosmetic items to customize how your character looks. Her shop uses a villager-style trading interface — browse her trades and exchange your coins for cosmetics.</p>
+
+      <h2>Available Items</h2>
+      <ResponsiveTable><table className="wiki-table">
+        <thead><tr><th>Item</th><th>What It Does</th><th>Price</th></tr></thead>
+        <tbody>
+          <tr><td><b>Transmog Scroll</b></td><td>Turns any item into a cosmetic skin (item loses stats)</td><td>1 Hell Dungeon Coin</td></tr>
+          <tr><td><b>Cleansing Scroll</b></td><td>Removes a transmog from gear, restoring its original look</td><td>30 Dungeon Coins</td></tr>
+          <tr><td><b>Weapon Skins</b></td><td>Pre-made cosmetic weapons you can use as transmog skins</td><td>1–3 Hell Dungeon Coins</td></tr>
+          <tr><td><b>Mirage Armor Set</b></td><td>Invisible armor pieces — wear armor that can't be seen</td><td>1 Hell Dungeon Coin each</td></tr>
+        </tbody>
+      </table></ResponsiveTable>
+
+      <h2>Currency</h2>
+      <p>Liana accepts two types of dungeon currency:</p>
+      <ul>
+        <li><b style={{ color: '#daa520' }}>Dungeon Coins</b> — Dropped by mobs inside dungeons. Used for cheaper purchases.</li>
+        <li><b style={{ color: '#8b0000' }}>Hell Dungeon Coins</b> — Premium coins worth 64 Dungeon Coins each. Used for most cosmetics. You can exchange 64 Dungeon Coins for 1 Hell Dungeon Coin at the <a href="#npcs/hellzmerchant" style={{ color: 'var(--gold)' }}>Hellz Merchant</a>.</li>
+      </ul>
+
+      <h2>How to Use</h2>
+      <ol>
+        <li>Find <b>Liana</b> in town and talk to her.</li>
+        <li>A villager trading GUI will open with her available cosmetics.</li>
+        <li>Place your <b>Dungeon Coins</b> or <b>Hell Dungeon Coins</b> in the trade slot.</li>
+        <li>Take the item from the result slot.</li>
+      </ol>
+
+      <Callout type="tip"><b>Tip:</b> Check the <a href="#guides/transmog" style={{ color: 'var(--gold)' }}>Transmog Guide</a> to learn how to use Transmog Scrolls and Cleansing Scrolls to customize your gear.</Callout>
+
+      <Callout type="info"><b>More cosmetics coming soon!</b> Liana's shop will expand over time with new skins, effects, and cosmetic items beyond transmog.</Callout>
     </>
   );
 }

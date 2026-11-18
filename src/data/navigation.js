@@ -30,6 +30,7 @@ export const NAV = [
     { id: 'npcs/taskmaster', label: 'Task Master (Kazren)' },
     { id: 'npcs/astrotommy', label: 'Stardust Collector (AstroTommy)' },
     { id: 'npcs/auctioneer', label: 'Auctioneer (Wayne)' },
+    { id: 'npcs/liana', label: 'Cosmetic Merchant (Liana)' },
   ]},
   { id: 'guides', label: 'Guides', children: [
     { id: 'guides/waystones', label: 'Waystones' },

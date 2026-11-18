@@ -1028,7 +1028,7 @@ export const FISH_DATA = [
     special: 'divine',
     sellPrice: 500000,
     catchRate: '0.05%',
-    catchCondition: 'Stand on Gold Block, Lucky Block in offhand, 10+ continuous water above, nighttime',
+    catchCondition: 'Stand on Gold Block, Conduit in offhand, 10+ continuous water above, nighttime',
   },
   {
     name: 'Amaterasu Fish',
@@ -2729,7 +2729,7 @@ export const FISH_DATA = [
     special: 'divine',
     sellPrice: 500000,
     catchRate: '0.05%',
-    catchCondition: 'Fish while standing on a max-level Enchanting Table, holding Legendary Undeciphered Tome',
+    catchCondition: 'Fish while standing on an Enchanting Table with 15+ bookshelves, holding Legendary Undeciphered Tome in offhand',
   },
   {
     name: 'Jack O\' Fish',

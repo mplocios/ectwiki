@@ -1,6 +1,8 @@
 import Callout from '../components/Callout';
 import { CheckIcon, CrossIcon } from '../components/Icons';
 import ResponsiveTable from '../components/ResponsiveTable';
+import ChestGui from '../components/ChestGui';
+import { SNOWCLOAK_DROPS, LOH_DROPS, HELLZ_CITADEL_DROPS } from '../data/dungeonDrops';
 import shopBuySell from '../assets/shop-buy-sell.png';
 import shopBackArrow from '../assets/shop-back-arrow.png';
 import shopSellAll from '../assets/shop-sell-all.png';
@@ -726,14 +728,101 @@ export function Dungeons() {
       <p>Dungeons are instanced adventures — separate worlds that your party enters together. Each dungeon has custom enemies, mini-bosses, a final boss, and loot chests scattered throughout. When the dungeon ends, everyone is teleported back to the main world.</p>
 
       <h2>Available Dungeons</h2>
-      <ResponsiveTable><table className="wiki-table">
-        <thead><tr><th>Dungeon</th><th>Party Size</th><th>Lives</th><th>Difficulty</th></tr></thead>
-        <tbody>
-          <tr><td><span style={{ color: '#55FFFF', fontWeight: 700 }}>Snowcloak</span></td><td>1–4 players</td><td>3 lives</td><td>Normal / Master</td></tr>
-          <tr><td><span style={{ color: '#FF5555', fontWeight: 700 }}>Lab of Horrors</span></td><td>1–5 players</td><td>3 lives</td><td>Normal / Master</td></tr>
-          <tr><td><span style={{ color: '#FFAA00', fontWeight: 700 }}>Hellz Citadel</span></td><td>1–5 players</td><td>3 lives</td><td>Normal / Master</td></tr>
-        </tbody>
-      </table></ResponsiveTable>
+      <p>Click on a dungeon below for detailed info, tips, and what to expect inside.</p>
+
+      <details className="dungeon-dropdown">
+        <summary><span style={{ color: '#55FFFF', fontWeight: 700 }}>Snowcloak</span></summary>
+        <div className="dungeon-details">
+          <ResponsiveTable><table className="wiki-table">
+            <thead><tr><th>Detail</th><th>Info</th></tr></thead>
+            <tbody>
+              <tr><td>Party Size</td><td>1–4 players</td></tr>
+              <tr><td>Lives</td><td>3 lives per player</td></tr>
+              <tr><td>Difficulty</td><td>Normal / Master</td></tr>
+              <tr><td>Theme</td><td>Frozen ice dungeon</td></tr>
+            </tbody>
+          </table></ResponsiveTable>
+          <p>A frozen dungeon filled with ice creatures and chilling hazards. Fight through waves of frost mobs, navigate icy corridors, and face the final boss at the heart of the glacier.</p>
+          <h4>Banned Items</h4>
+          <ul>
+            <li>Elytra</li>
+          </ul>
+          <h4>Tips</h4>
+          <ul>
+            <li>Bring fire-based weapons for bonus damage against ice mobs.</li>
+            <li>Stick with your party — the corridors can split and mobs hit hard if you're alone.</li>
+            <li>Loot every chest you find along the way for crafting materials.</li>
+          </ul>
+          <ChestGui title="Snowcloak — Loot Table" items={SNOWCLOAK_DROPS} />
+        </div>
+      </details>
+
+      <details className="dungeon-dropdown">
+        <summary><span style={{ color: '#FF5555', fontWeight: 700 }}>Lab of Horrors</span></summary>
+        <div className="dungeon-details">
+          <ResponsiveTable><table className="wiki-table">
+            <thead><tr><th>Detail</th><th>Info</th></tr></thead>
+            <tbody>
+              <tr><td>Party Size</td><td>1–5 players</td></tr>
+              <tr><td>Lives</td><td>3 lives per player</td></tr>
+              <tr><td>Difficulty</td><td>Normal / Master</td></tr>
+              <tr><td>Theme</td><td>Underground horror laboratory</td></tr>
+            </tbody>
+          </table></ResponsiveTable>
+          <p>A dark underground lab filled with twisted experiments and abominations. Navigate through eerie corridors, dodge traps, and survive the horrors lurking in every room.</p>
+          <h4>Banned Items</h4>
+          <ul>
+            <li>None (default rules apply)</li>
+          </ul>
+          <h4>Special Rules</h4>
+          <ul>
+            <li>No durability loss on armor, weapons, or tools inside this dungeon.</li>
+            <li>Death messages are hidden — you won't know if a teammate dies unless you check.</li>
+            <li>PvP is disabled.</li>
+          </ul>
+          <h4>Tips</h4>
+          <ul>
+            <li>Stay close to your team — this dungeon is dark and disorienting.</li>
+            <li>Bring potions of Night Vision to see better in the dark areas.</li>
+            <li>Watch out for ambush rooms — mobs can spawn around you.</li>
+          </ul>
+          <ChestGui title="Lab of Horrors — Loot Table" items={LOH_DROPS} />
+        </div>
+      </details>
+
+      <details className="dungeon-dropdown">
+        <summary><span style={{ color: '#FFAA00', fontWeight: 700 }}>Hellz Citadel</span></summary>
+        <div className="dungeon-details">
+          <ResponsiveTable><table className="wiki-table">
+            <thead><tr><th>Detail</th><th>Info</th></tr></thead>
+            <tbody>
+              <tr><td>Party Size</td><td>1–4 players</td></tr>
+              <tr><td>Lives</td><td>Unlimited</td></tr>
+              <tr><td>Difficulty</td><td>Normal / Master</td></tr>
+              <tr><td>Theme</td><td>Nether fortress / hellscape</td></tr>
+            </tbody>
+          </table></ResponsiveTable>
+          <p>A blazing nether fortress crawling with demonic enemies. The hardest dungeon available — expect powerful bosses, fire hazards, and relentless mob waves. Master mode adds +5 bonus MythicMob levels on top of the usual stat increase.</p>
+          <h4>Banned Items</h4>
+          <ul>
+            <li>Elytra</li>
+            <li>Trident</li>
+            <li>Firework Rockets</li>
+          </ul>
+          <h4>Special Rules</h4>
+          <ul>
+            <li>No durability loss on armor, weapons, or tools inside this dungeon.</li>
+            <li>Unlimited lives — you can respawn as many times as needed, but you still drop your inventory on death.</li>
+          </ul>
+          <h4>Tips</h4>
+          <ul>
+            <li>Bring fire resistance potions — the nether environment and fire mobs deal constant fire damage.</li>
+            <li>Even though lives are unlimited, dying still drops your items. Pick them up fast before they despawn.</li>
+            <li>Master mode here is significantly harder — mobs get +5 MythicMob levels on top of 150% HP and 130% damage.</li>
+          </ul>
+          <ChestGui title="Hellz Citadel — Loot Table" items={HELLZ_CITADEL_DROPS} />
+        </div>
+      </details>
 
       <h2>Difficulty Levels</h2>
       <p>When starting a dungeon, you can choose between <b>Normal</b> and <b>Master</b> difficulty.</p>
@@ -741,7 +830,8 @@ export function Dungeons() {
         <thead><tr><th>Stat</th><th>Normal</th><th>Master</th></tr></thead>
         <tbody>
           <tr><td>Mob Health</td><td>100%</td><td><span style={{ color: '#FF5555', fontWeight: 700 }}>150%</span></td></tr>
-          <tr><td>Mob Damage</td><td>100%</td><td><span style={{ color: '#FF5555', fontWeight: 700 }}>125%</span></td></tr>
+          <tr><td>Mob Damage</td><td>100%</td><td><span style={{ color: '#FF5555', fontWeight: 700 }}>130%</span></td></tr>
+          <tr><td>Gem Drops</td><td>Chipped – Polished tiers</td><td><span style={{ color: '#FFAA00', fontWeight: 700 }}>All tiers including Pristine & Radiant</span></td></tr>
         </tbody>
       </table></ResponsiveTable>
 
@@ -760,31 +850,12 @@ export function Dungeons() {
 
       <h2>Inside the Dungeon</h2>
       <ul>
-        <li><b>Lives</b> — Each player has <b>3 lives</b>. Dying uses a life and drops your inventory. When all lives are gone, you become a spectator.</li>
+        <li><b>Lives</b> — Each player has a set number of lives (varies per dungeon). Dying uses a life and drops your inventory. When all lives are gone, you become a spectator.</li>
         <li><b>Checkpoints</b> — Walking through certain areas saves your respawn point. If you die, you respawn at the last checkpoint.</li>
         <li><b>Loot Chests</b> — Interact with glowing chests throughout the dungeon for random loot (crafting materials, rare items).</li>
         <li><b>Boss Fights</b> — Each dungeon has a final boss. Defeat it to complete the dungeon and earn rewards.</li>
+        <li><b>Leaving</b> — Type <code>/leave</code> to exit the dungeon at any time.</li>
       </ul>
-
-      <h2>Dungeon Commands</h2>
-      <div className="cmd-list">
-        <div className="cmd-row"><code>/md play &lt;dungeon&gt;</code><span className="cmd-desc">Start a dungeon (party leader only)</span></div>
-        <div className="cmd-row"><code>/md leave</code><span className="cmd-desc">Leave the dungeon and return to the main world</span></div>
-        <div className="cmd-row"><code>/md lives</code><span className="cmd-desc">Check how many lives you have left</span></div>
-        <div className="cmd-row"><code>/md stuck</code><span className="cmd-desc">Teleport to your last checkpoint if you're stuck</span></div>
-      </div>
-
-      <h2>Party Commands</h2>
-      <div className="cmd-list">
-        <div className="cmd-row"><code>/party create</code><span className="cmd-desc">Create a new dungeon party</span></div>
-        <div className="cmd-row"><code>/party invite &lt;player&gt;</code><span className="cmd-desc">Invite a player to your party</span></div>
-        <div className="cmd-row"><code>/party join &lt;player&gt;</code><span className="cmd-desc">Request to join a player's party</span></div>
-        <div className="cmd-row"><code>/party list</code><span className="cmd-desc">View all active parties</span></div>
-        <div className="cmd-row"><code>/party leave</code><span className="cmd-desc">Leave the current party</span></div>
-        <div className="cmd-row"><code>/party disband</code><span className="cmd-desc">Disband the party (leader only)</span></div>
-        <div className="cmd-row"><code>/pd join</code><span className="cmd-desc">Join your party's active dungeon</span></div>
-        <div className="cmd-row"><code>/pd rejoin</code><span className="cmd-desc">Rejoin after disconnecting</span></div>
-      </div>
 
       <h2>Rewards</h2>
       <p>Completing a dungeon rewards you with:</p>
@@ -797,8 +868,6 @@ export function Dungeons() {
         <li><b>XP</b> — Experience points from killing mobs and bosses.</li>
       </ul>
 
-      <Callout type="warn"><b>Banned Items:</b> Elytra cannot be used inside dungeons. Certain items may also be restricted — check the dungeon entrance for details.</Callout>
-
       <h2>Rules & Restrictions</h2>
       <ul>
         <li>You <b>cannot break or place blocks</b> inside dungeons.</li>
@@ -806,6 +875,10 @@ export function Dungeons() {
         <li>If you disconnect, you have <b>5 minutes</b> to rejoin before being kicked from the dungeon.</li>
         <li>If all party members lose all lives, the dungeon ends and everyone is sent back.</li>
       </ul>
+
+      <Callout type="warn"><b>Do NOT bring illegal or exploited items into dungeons.</b> The dungeon system may consume, delete, or fail to return items that are not legitimate. The administration is not responsible for any items lost this way. Only bring gear that the dungeon allows.</Callout>
+
+      <Callout type="warn"><b>Banned Items:</b> Elytra is banned in most dungeons. Some dungeons also ban Tridents and Firework Rockets. Check each dungeon's guide above for specifics.</Callout>
 
       <Callout type="tip"><b>Tip:</b> Deposit your coins at the <a href="#npcs/anika" style={{ color: 'var(--gold)' }}>Bank</a> before entering a dungeon. If you die inside, the Death Penalty still applies to your wallet!</Callout>
     </>
@@ -1582,7 +1655,7 @@ export function Transmog() {
       <p>Transmogrification lets you change the <b>appearance</b> of your equipment while keeping all of its stats, enchantments, and functionality. Want your powerful diamond sword to look like a cool custom weapon? Transmog makes it happen.</p>
 
       <h2>What You Need</h2>
-      <p>Visit the <b>Transmog NPC</b> to purchase the items you need:</p>
+      <p>Visit <a href="#npcs/liana" style={{ color: 'var(--gold)' }}><b>Liana</b></a>, the Cosmetic Merchant, to purchase the items you need:</p>
       <ResponsiveTable><table className="wiki-table">
         <thead><tr><th>Item</th><th>What It Does</th></tr></thead>
         <tbody>
@@ -1593,7 +1666,7 @@ export function Transmog() {
 
       <h2>How to Create a Skin</h2>
       <ol>
-        <li>Buy a <b>Transmog Scroll</b> from the Transmog NPC.</li>
+        <li>Buy a <b>Transmog Scroll</b> from <a href="#npcs/liana" style={{ color: 'var(--gold)' }}>Liana</a>.</li>
         <li>Open your inventory.</li>
         <li>Pick up the Transmog Scroll.</li>
         <li>Drag it onto the item you want to turn into a skin.</li>
@@ -1626,7 +1699,7 @@ export function Transmog() {
 
       <h2>How to Remove a Skin</h2>
       <ol>
-        <li>Buy a <b>Cleansing Scroll</b> from the Transmog NPC.</li>
+        <li>Buy a <b>Cleansing Scroll</b> from <a href="#npcs/liana" style={{ color: 'var(--gold)' }}>Liana</a>.</li>
         <li>Open your inventory.</li>
         <li>Pick up the Cleansing Scroll.</li>
         <li>Drag it onto your transmogged gear.</li>
