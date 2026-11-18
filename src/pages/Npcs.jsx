@@ -1,4 +1,5 @@
 import Callout from '../components/Callout';
+import ResponsiveTable from '../components/ResponsiveTable';
 import { QUEST_TIERS } from '../data/quests';
 import npcElara from '../assets/npc-elara.png';
 import enchantressGui from '../assets/enchantress-gui.png';
