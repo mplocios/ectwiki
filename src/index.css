@@ -451,9 +451,10 @@ body {
   .fish-modal { margin: 16px; padding: 20px; }
   .wiki-table { font-size: 13px; }
   .wiki-table th, .wiki-table td { padding: 8px 10px; }
-  .chest-gui__grid { grid-template-columns: repeat(9, 1fr) !important; }
-  .chest-slot { width: 36px; height: 36px; }
-  .chest-slot__icon { width: 24px; height: 24px; }
+  .chest-modal { max-width: 95vw; padding: 10px; }
+  .chest-gui__grid { grid-template-columns: repeat(auto-fill, minmax(38px, 1fr)) !important; gap: 2px; padding: 4px; }
+  .chest-slot { width: 100%; aspect-ratio: 1; height: auto; min-width: 0; }
+  .chest-slot__icon { width: 70%; height: 70%; }
   .mc-tooltip { display: none !important; }
   .chest-gui__hint::after { content: ' — tap items for details'; }
 }

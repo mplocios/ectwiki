@@ -738,11 +738,22 @@ export function Dungeons() {
             <tbody>
               <tr><td>Party Size</td><td>1–4 players</td></tr>
               <tr><td>Lives</td><td>3 lives per player</td></tr>
-              <tr><td>Difficulty</td><td>Normal / Master</td></tr>
+              <tr><td>Difficulty</td><td>Normal / Master / <span style={{ color: '#AA00AA', fontWeight: 700 }}>Nightmare</span></td></tr>
               <tr><td>Theme</td><td>Frozen ice dungeon</td></tr>
             </tbody>
           </table></ResponsiveTable>
           <p>A frozen dungeon filled with ice creatures and chilling hazards. Fight through waves of frost mobs, navigate icy corridors, and face the final boss at the heart of the glacier.</p>
+          <h4>Difficulty Stats</h4>
+          <ResponsiveTable><table className="wiki-table">
+            <thead><tr><th></th><th>Normal</th><th>Master</th><th style={{ color: '#AA00AA' }}>Nightmare</th></tr></thead>
+            <tbody>
+              <tr><td>Mob HP</td><td>100%</td><td>150%</td><td><span style={{ color: '#AA00AA', fontWeight: 700 }}>1000%</span></td></tr>
+              <tr><td>Mob DMG</td><td>100%</td><td>130%</td><td><span style={{ color: '#AA00AA', fontWeight: 700 }}>300%</span></td></tr>
+              <tr><td>Bonus Levels</td><td>+0</td><td>+5</td><td><span style={{ color: '#AA00AA', fontWeight: 700 }}>+10</span></td></tr>
+              <tr><td>Bonus Loot</td><td>1x</td><td>1.5x</td><td><span style={{ color: '#AA00AA', fontWeight: 700 }}>2x</span></td></tr>
+              <tr><td>Ancient Tomes</td><td>Yes</td><td>Yes</td><td><span style={{ color: '#FF5555', fontWeight: 700 }}>Disabled</span></td></tr>
+            </tbody>
+          </table></ResponsiveTable>
           <h4>Banned Items</h4>
           <ul>
             <li>Elytra</li>
@@ -765,11 +776,22 @@ export function Dungeons() {
             <tbody>
               <tr><td>Party Size</td><td>1–5 players</td></tr>
               <tr><td>Lives</td><td>3 lives per player</td></tr>
-              <tr><td>Difficulty</td><td>Normal / Master</td></tr>
+              <tr><td>Difficulty</td><td>Normal / Master / <span style={{ color: '#AA00AA', fontWeight: 700 }}>Nightmare</span></td></tr>
               <tr><td>Theme</td><td>Underground horror laboratory</td></tr>
             </tbody>
           </table></ResponsiveTable>
           <p>A dark underground lab filled with twisted experiments and abominations. Navigate through eerie corridors, dodge traps, and survive the horrors lurking in every room.</p>
+          <h4>Difficulty Stats</h4>
+          <ResponsiveTable><table className="wiki-table">
+            <thead><tr><th></th><th>Normal</th><th>Master</th><th style={{ color: '#AA00AA' }}>Nightmare</th></tr></thead>
+            <tbody>
+              <tr><td>Mob HP</td><td>100%</td><td>150%</td><td><span style={{ color: '#AA00AA', fontWeight: 700 }}>1000%</span></td></tr>
+              <tr><td>Mob DMG</td><td>100%</td><td>130%</td><td><span style={{ color: '#AA00AA', fontWeight: 700 }}>300%</span></td></tr>
+              <tr><td>Bonus Levels</td><td>+0</td><td>+5</td><td><span style={{ color: '#AA00AA', fontWeight: 700 }}>+10</span></td></tr>
+              <tr><td>Bonus Loot</td><td>1x</td><td>1.5x</td><td><span style={{ color: '#AA00AA', fontWeight: 700 }}>2x</span></td></tr>
+              <tr><td>Ancient Tomes</td><td>Yes</td><td>Yes</td><td><span style={{ color: '#FF5555', fontWeight: 700 }}>Disabled</span></td></tr>
+            </tbody>
+          </table></ResponsiveTable>
           <h4>Banned Items</h4>
           <ul>
             <li>None (default rules apply)</li>
@@ -797,12 +819,23 @@ export function Dungeons() {
             <thead><tr><th>Detail</th><th>Info</th></tr></thead>
             <tbody>
               <tr><td>Party Size</td><td>1–4 players</td></tr>
-              <tr><td>Lives</td><td>Unlimited</td></tr>
-              <tr><td>Difficulty</td><td>Normal / Master</td></tr>
+              <tr><td>Lives</td><td>3 lives per player</td></tr>
+              <tr><td>Difficulty</td><td>Normal / Master / <span style={{ color: '#AA00AA', fontWeight: 700 }}>Nightmare</span></td></tr>
               <tr><td>Theme</td><td>Nether fortress / hellscape</td></tr>
             </tbody>
           </table></ResponsiveTable>
-          <p>A blazing nether fortress crawling with demonic enemies. The hardest dungeon available — expect powerful bosses, fire hazards, and relentless mob waves. Master mode adds +5 bonus MythicMob levels on top of the usual stat increase.</p>
+          <p>A blazing nether fortress crawling with demonic enemies. The hardest dungeon available — expect powerful bosses, fire hazards, and relentless mob waves. Master mode adds +5 bonus MythicMob levels, and Nightmare mode adds +10 bonus levels with exclusive Abyssal gem drops and legendary equipment.</p>
+          <h4>Difficulty Stats</h4>
+          <ResponsiveTable><table className="wiki-table">
+            <thead><tr><th></th><th>Normal</th><th>Master</th><th style={{ color: '#AA00AA' }}>Nightmare</th></tr></thead>
+            <tbody>
+              <tr><td>Mob HP</td><td>100%</td><td>150%</td><td><span style={{ color: '#AA00AA', fontWeight: 700 }}>1000%</span></td></tr>
+              <tr><td>Mob DMG</td><td>100%</td><td>130%</td><td><span style={{ color: '#AA00AA', fontWeight: 700 }}>300%</span></td></tr>
+              <tr><td>Bonus Levels</td><td>+0</td><td>+5</td><td><span style={{ color: '#AA00AA', fontWeight: 700 }}>+10</span></td></tr>
+              <tr><td>Bonus Loot</td><td>1x</td><td>1.5x</td><td><span style={{ color: '#AA00AA', fontWeight: 700 }}>2x</span></td></tr>
+              <tr><td>Ancient Tomes</td><td>Yes</td><td>Yes</td><td><span style={{ color: '#FF5555', fontWeight: 700 }}>Disabled</span></td></tr>
+            </tbody>
+          </table></ResponsiveTable>
           <h4>Banned Items</h4>
           <ul>
             <li>Elytra</li>
@@ -812,30 +845,34 @@ export function Dungeons() {
           <h4>Special Rules</h4>
           <ul>
             <li>No durability loss on armor, weapons, or tools inside this dungeon.</li>
-            <li>Unlimited lives — you can respawn as many times as needed, but you still drop your inventory on death.</li>
           </ul>
           <h4>Tips</h4>
           <ul>
             <li>Bring fire resistance potions — the nether environment and fire mobs deal constant fire damage.</li>
-            <li>Even though lives are unlimited, dying still drops your items. Pick them up fast before they despawn.</li>
+            <li>Dying drops your items — pick them up fast before they despawn.</li>
             <li>Master mode here is significantly harder — mobs get +5 MythicMob levels on top of 150% HP and 130% damage.</li>
+            <li>Nightmare mode is brutal — mobs get +10 MythicMob levels with 1000% HP and 300% damage. Ancient Tome enchantments are disabled. Exclusive Abyssal-tier gems and legendary armor drop only in Nightmare.</li>
           </ul>
           <ChestGui title="Hellz Citadel — Loot Table" items={HELLZ_CITADEL_DROPS} />
         </div>
       </details>
 
       <h2>Difficulty Levels</h2>
-      <p>When starting a dungeon, you can choose between <b>Normal</b> and <b>Master</b> difficulty.</p>
+      <p>When starting a dungeon, you can choose between <b>Normal</b>, <b>Master</b>, and <b style={{ color: '#AA00AA' }}>Nightmare</b> difficulty.</p>
       <ResponsiveTable><table className="wiki-table">
-        <thead><tr><th>Stat</th><th>Normal</th><th>Master</th></tr></thead>
+        <thead><tr><th>Stat</th><th>Normal</th><th>Master</th><th style={{ color: '#AA00AA' }}>Nightmare</th></tr></thead>
         <tbody>
-          <tr><td>Mob Health</td><td>100%</td><td><span style={{ color: '#FF5555', fontWeight: 700 }}>150%</span></td></tr>
-          <tr><td>Mob Damage</td><td>100%</td><td><span style={{ color: '#FF5555', fontWeight: 700 }}>130%</span></td></tr>
-          <tr><td>Gem Drops</td><td>Chipped – Polished tiers</td><td><span style={{ color: '#FFAA00', fontWeight: 700 }}>All tiers including Pristine & Radiant</span></td></tr>
+          <tr><td>Mob Health</td><td>100%</td><td><span style={{ color: '#FF5555', fontWeight: 700 }}>150%</span></td><td><span style={{ color: '#AA00AA', fontWeight: 700 }}>1000%</span></td></tr>
+          <tr><td>Mob Damage</td><td>100%</td><td><span style={{ color: '#FF5555', fontWeight: 700 }}>130%</span></td><td><span style={{ color: '#AA00AA', fontWeight: 700 }}>300%</span></td></tr>
+          <tr><td>Bonus Mob Levels (Hellz)</td><td>+0</td><td><span style={{ color: '#FF5555', fontWeight: 700 }}>+5</span></td><td><span style={{ color: '#AA00AA', fontWeight: 700 }}>+10</span></td></tr>
+          <tr><td>Bonus Loot</td><td>1x</td><td><span style={{ color: '#FF5555', fontWeight: 700 }}>1.5x</span></td><td><span style={{ color: '#AA00AA', fontWeight: 700 }}>2x</span></td></tr>
+          <tr><td>Gem Drops</td><td>Chipped – Polished</td><td><span style={{ color: '#FFAA00', fontWeight: 700 }}>+ Pristine & Radiant</span></td><td><span style={{ color: '#AA00AA', fontWeight: 700 }}>+ Abyssal (3.2%)</span></td></tr>
+          <tr><td>Exclusive Loot</td><td>Basic gear</td><td><span style={{ color: '#FFAA00', fontWeight: 700 }}>Standard gear, Legendary Tomes</span></td><td><span style={{ color: '#AA00AA', fontWeight: 700 }}>Demonic/Necromancer armor, higher boss drop rates</span></td></tr>
+          <tr><td>Ancient Tomes</td><td>Allowed</td><td><span style={{ color: '#FFAA00', fontWeight: 700 }}>Allowed</span></td><td><span style={{ color: '#AA00AA', fontWeight: 700 }}>Disabled</span></td></tr>
         </tbody>
       </table></ResponsiveTable>
 
-      <Callout type="warn"><b>Master mode</b> is for experienced players. Mobs hit harder and take longer to kill. Make sure your party is well-geared before attempting it!</Callout>
+      <Callout type="warn"><b>Nightmare mode</b> is endgame content. Mobs have 10x health and deal 3x damage. Ancient Tome enchantments are disabled for the run. Only attempt with a full, well-geared party!</Callout>
 
       <h2>How to Enter a Dungeon</h2>
       <ol>
@@ -862,9 +899,9 @@ export function Dungeons() {
       <ul>
         <li><b>Loot Chest Drops</b> — Crafting materials like Cobalt, Mithril, Steel, and Magic Essence from chests along the way.</li>
         <li><b>Boss Drops</b> — The final boss drops rare dungeon-exclusive weapons and armor through a loot shower.</li>
-        <li><b>Gem Drops</b> — Normal mobs and bosses can drop <a href="#guides/gemsockets" style={{ color: 'var(--gold)' }}>gems</a> that you can socket into gear with socket slots. Master mode unlocks higher-tier gems.</li>
+        <li><b>Gem Drops</b> — Normal mobs and bosses can drop <a href="#guides/gemsockets" style={{ color: 'var(--gold)' }}>gems</a> that you can socket into gear with socket slots. Master mode unlocks Pristine & Radiant tiers, and Nightmare adds the rare Abyssal tier.</li>
         <li><b>Dungeon Gear</b> — Weapons and armor dropped in dungeons can come with <b>gem socket slots</b>, letting you customize them with gems for bonus stats.</li>
-        <li><b>Gem Remover</b> — Bosses have a 1% chance to drop a Gem Remover, which lets you safely remove a socketed gem without destroying it.</li>
+        <li><b>Gem Remover</b> — Bosses drop Gem Removers (1% Normal, 1.5% Master, 2% Nightmare) which let you safely remove a socketed gem without destroying it.</li>
         <li><b>XP</b> — Experience points from killing mobs and bosses.</li>
       </ul>
 
