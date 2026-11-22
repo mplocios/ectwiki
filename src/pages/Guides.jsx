@@ -1769,3 +1769,67 @@ export function Transmog() {
   );
 }
 
+export function VoiceChat() {
+  return (
+    <>
+      <h1>Voice Chat</h1>
+      <p className="page-desc">Talk with other players using proximity voice chat — make your adventures more fun and social.</p>
+
+      <h2>What is Voice Chat?</h2>
+      <p>ExtremeCraft features <b>proximity voice chat</b>, allowing you to talk with nearby players as you explore, fight, and build together. Whether you're running dungeons with friends, trading at the market, or just hanging out in town, voice chat makes every moment more interactive and enjoyable.</p>
+      <p>Voice chat is completely optional — you don't need it to play. But if you want a more immersive social experience, it's easy to set up.</p>
+
+      <h2>How It Works</h2>
+      <ul>
+        <li><b>Proximity-based</b> — you can hear players who are nearby, and their voice gets louder or quieter based on distance.</li>
+        <li><b>Voice groups</b> — you can also create or join voice groups to talk with specific players regardless of distance.</li>
+        <li><b>Push-to-talk or voice activation</b> — choose whichever mode you prefer.</li>
+        <li><b>Player volume control</b> — adjust individual player volumes to your liking.</li>
+      </ul>
+
+      <h2>Setup for Java Players</h2>
+      <p>Java players need to install the <b>Simple Voice Chat</b> mod on their client.</p>
+      <ol>
+        <li>Download the <b>Simple Voice Chat</b> mod from <a href="https://modrinth.com/plugin/simple-voice-chat" target="_blank" rel="noopener noreferrer">Modrinth</a>.</li>
+        <li>Place the downloaded <code>.jar</code> file into your Minecraft <code>mods</code> folder.</li>
+        <li>Launch Minecraft with Fabric or Forge (whichever version of the mod you downloaded).</li>
+        <li>Join the server — voice chat will connect automatically.</li>
+      </ol>
+
+      <Callout type="info"><b>Note:</b> Make sure you download the correct version of the mod that matches your Minecraft version and mod loader (Fabric or Forge).</Callout>
+
+      <h2>Setup for Bedrock Players</h2>
+      <p>Bedrock players do <b>not</b> need to install a client-side mod. Instead, you connect through a <b>browser</b> or the <b>Android app</b>.</p>
+      <ol>
+        <li>Join the server on your Bedrock client.</li>
+        <li>Type <code>/voice</code> in-game.</li>
+        <li>You will receive a <b>pairing code</b>, <b>link</b>, or <b>QR code</b>.</li>
+        <li>Open the voice client in your browser or the Android app and enter the code to connect.</li>
+      </ol>
+
+      <p>Learn more about Bedrock voice chat setup on <a href="https://modrinth.com/plugin/bedrock-simple-voice" target="_blank" rel="noopener noreferrer">Modrinth</a>.</p>
+
+      <h3>Android App</h3>
+      <p>An optional native Android app is available as a direct APK download (not through the Play Store). It requires Android 8.0 or newer and includes floating controls so you can use voice while playing.</p>
+
+      <Callout type="warn"><b>Mobile Note:</b> Background behavior varies by device and battery settings. The app cannot prevent Minecraft itself from pausing when you switch away. Using a second device for voice is an alternative if you experience interruptions.</Callout>
+
+      <h3>Java Players Without the Mod</h3>
+      <p>If you're a Java player who doesn't want to install the mod, you can also connect through the browser voice client — just use <code>/voice</code> in-game and pair the same way Bedrock players do.</p>
+
+      <h2>Voice Controls</h2>
+      <ResponsiveTable><table className="wiki-table">
+        <thead><tr><th>Control</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td>Push-to-Talk</td><td>Hold a key to transmit your voice (default: <code>V</code> on Java)</td></tr>
+          <tr><td>Voice Activation</td><td>Automatically transmits when you speak above a threshold</td></tr>
+          <tr><td>Mute Microphone</td><td>Toggle your mic on/off</td></tr>
+          <tr><td>Player Volumes</td><td>Adjust how loud each player sounds to you</td></tr>
+        </tbody>
+      </table></ResponsiveTable>
+
+      <Callout type="tip"><b>Tip:</b> If you're new to voice chat, try push-to-talk first — it gives you full control over when others can hear you.</Callout>
+    </>
+  );
+}
+

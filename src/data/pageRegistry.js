@@ -8,7 +8,7 @@ import Trials from '../pages/Trials';
 import Commands from '../pages/Commands';
 import Tips from '../pages/Tips';
 import { Looloonah, Scout, Haven, Anika, Enchantress, Decipherer, TaskMaster, AstroTommy, Auctioneer, Samuel, Liana } from '../pages/Npcs';
-import { Waystones, Rtp, Claims, Teams, Selling, Island, ChestShop, DimensionLock, DeathPenalty, AfkRewards, RenameToken, Dungeons, DungeonParty, LuckyBlock, PublicWarps, BedrockPlayers, GemSockets, SocketGuide, Transmog } from '../pages/Guides';
+import { Waystones, Rtp, Claims, Teams, Selling, Island, ChestShop, DimensionLock, DeathPenalty, AfkRewards, RenameToken, Dungeons, DungeonParty, LuckyBlock, PublicWarps, BedrockPlayers, GemSockets, SocketGuide, Transmog, VoiceChat } from '../pages/Guides';
 import Fishing from '../pages/Fishing';
 import FishCodex from '../pages/FishCodex';
 import Faq from '../pages/Faq';
@@ -60,6 +60,7 @@ const PAGES = {
   'guides/gemsockets': GemSockets,
   'guides/socketsystem': SocketGuide,
   'guides/transmog': Transmog,
+  voicechat: VoiceChat,
   'help/bedrock-gui': BedrockPlayers,
   'npcs/auctioneer': Auctioneer,
   'npcs/samuel': Samuel,

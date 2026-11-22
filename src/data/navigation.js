@@ -8,6 +8,7 @@ export const NAV = [
   { id: 'features', label: 'Features' },
   { id: 'rules', label: 'Rules' },
   { id: 'economy', label: 'Economy' },
+  { id: 'voicechat', label: 'Voice Chat' },
   { id: 'ranks', label: 'Rank Progression', children: [
     { id: 'ranks/overview', label: 'Overview' },
     { id: 'ranks/peasant', label: 'Peasant Tier' },
