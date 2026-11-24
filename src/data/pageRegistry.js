@@ -3,12 +3,12 @@ import { Town, Elysium, Frontier } from '../pages/Worlds';
 import Features from '../pages/Features';
 import Rules from '../pages/Rules';
 import Economy from '../pages/Economy';
-import { RanksOverview, PeasantTier, AdventurerTier, SquireTier, KnightTier, EliteTier, ChampionTier } from '../pages/Ranks';
+import { RanksOverview, PeasantTier, AdventurerTier, SquireTier, KnightTier, EliteTier, ChampionTier, HighChampionTier, ParagonTier, VanguardTier, SovereignTier } from '../pages/Ranks';
 import Trials from '../pages/Trials';
 import Commands from '../pages/Commands';
 import Tips from '../pages/Tips';
 import { Looloonah, Scout, Haven, Anika, Enchantress, Decipherer, TaskMaster, AstroTommy, Auctioneer, Samuel, Liana } from '../pages/Npcs';
-import { Waystones, Rtp, Claims, Teams, Selling, Island, ChestShop, DimensionLock, DeathPenalty, AfkRewards, RenameToken, Dungeons, DungeonParty, LuckyBlock, PublicWarps, BedrockPlayers, GemSockets, SocketGuide, Transmog, VoiceChat } from '../pages/Guides';
+import { Waystones, Rtp, Claims, Teams, Selling, Island, ChestShop, DimensionLock, DeathPenalty, RenameToken, Dungeons, DungeonParty, LuckyBlock, PublicWarps, BedrockPlayers, GemSockets, SocketGuide, Transmog, VoiceChat } from '../pages/Guides';
 import Fishing from '../pages/Fishing';
 import FishCodex from '../pages/FishCodex';
 import Faq from '../pages/Faq';
@@ -29,6 +29,10 @@ const PAGES = {
   'ranks/knight': KnightTier,
   'ranks/elite': EliteTier,
   'ranks/champion': ChampionTier,
+  'ranks/high-champion': HighChampionTier,
+  'ranks/paragon': ParagonTier,
+  'ranks/vanguard': VanguardTier,
+  'ranks/sovereign': SovereignTier,
   trials: Trials,
   commands: Commands,
   tips: Tips,
@@ -49,7 +53,6 @@ const PAGES = {
   'guides/chestshop': ChestShop,
   'guides/dimensionlock': DimensionLock,
   'guides/deathpenalty': DeathPenalty,
-  'guides/afkrewards': AfkRewards,
   'guides/renametoken': RenameToken,
   'guides/dungeons': Dungeons,
   'guides/party': DungeonParty,

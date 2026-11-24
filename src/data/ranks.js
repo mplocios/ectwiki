@@ -59,4 +59,38 @@ export const RANK_TIERS = {
       { name: 'Champion I', cost: '750,000', time: '750h', perks: 'Champion\'s Wing, Prismatic Everfeast, Lucky Block x64, +1 Player Vault', task: 'Consume any Divine Fish + Break 1000 Lucky Blocks + Complete 10 Dungeons Solo (Master)' },
     ],
   },
+  highChampion: {
+    name: 'High Champion',
+    color: '#6366f1',
+    ranks: [
+      { name: 'High Champion IV', cost: '1,000,000', time: '1,000h', perks: 'Exclusive High Champion title, +1 Player Vault', task: '' },
+      { name: 'High Champion III', cost: '1,250,000', time: '1,250h', perks: 'Exclusive High Champion title, +1 Player Vault', task: '' },
+      { name: 'High Champion II', cost: '1,500,000', time: '1,500h', perks: 'Exclusive High Champion title, +1 Player Vault', task: '' },
+      { name: 'High Champion I', cost: '2,000,000', time: '1,750h', perks: 'Exclusive High Champion title, +1 Player Vault', task: '' },
+    ],
+  },
+  paragon: {
+    name: 'Paragon',
+    color: '#f472b6',
+    ranks: [
+      { name: 'Paragon III', cost: '2,500,000', time: '2,000h', perks: 'Exclusive Paragon title, +1 Player Vault', task: '' },
+      { name: 'Paragon II', cost: '3,000,000', time: '2,250h', perks: 'Exclusive Paragon title, +1 Player Vault', task: '' },
+      { name: 'Paragon I', cost: '3,500,000', time: '2,500h', perks: 'Exclusive Paragon title, +1 Player Vault', task: '' },
+    ],
+  },
+  vanguard: {
+    name: 'Vanguard',
+    color: '#cbd5e1',
+    ranks: [
+      { name: 'Vanguard II', cost: '4,000,000', time: '2,750h', perks: 'Exclusive Vanguard title, +1 Player Vault', task: '' },
+      { name: 'Vanguard I', cost: '5,000,000', time: '3,000h', perks: 'Exclusive Vanguard title, +1 Player Vault', task: '' },
+    ],
+  },
+  sovereign: {
+    name: 'Sovereign',
+    color: '#a855f7',
+    ranks: [
+      { name: 'Sovereign', cost: '7,500,000', time: '3,250h', perks: 'Exclusive Sovereign title, +1 Player Vault', task: '' },
+    ],
+  },
 };

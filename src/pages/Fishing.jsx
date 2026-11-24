@@ -22,7 +22,7 @@ export default function Fishing() {
   return (
     <>
       <h1>Fishing</h1>
-      <p className="page-desc">Cast your line and discover over 130 custom fish — from common catches to mythical legends.</p>
+      <p className="page-desc">Cast your line and discover 324 custom fish — from common catches to mythical legends.</p>
 
       <h2>How It Works</h2>
       <p>Fishing on ExtremeCraft is more than just waiting for a bite. Grab a fishing rod, find a body of water, and start casting. Every catch has a chance to be a <b>custom fish</b> with its own unique look, rarity, and value. The rarer the fish, the more it's worth.</p>

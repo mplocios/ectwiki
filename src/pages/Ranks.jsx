@@ -7,7 +7,7 @@ export function RanksOverview() {
   return (
     <>
       <h1>Rank Progression</h1>
-      <p className="page-desc">24 ranks across 6 tiers. Each requires gold, playtime, and sometimes kill or quest requirements.</p>
+      <p className="page-desc">34 ranks across 10 tiers. Each requires gold, playtime, and sometimes kill or quest requirements.</p>
 
       <h2>Tier Overview</h2>
       <ResponsiveTable><table className="wiki-table">
@@ -21,6 +21,10 @@ export function RanksOverview() {
           <tr><td><span style={{ color: '#eab308', fontWeight: 700 }}>Knight</span></td><td>IV → I</td><td>5,000 – 8,000</td><td>50h – 80h</td></tr>
           <tr><td><span style={{ color: '#34d399', fontWeight: 700 }}>Elite Knight</span></td><td>IV → I</td><td>10,000 – 150,000</td><td>100h – 250h</td></tr>
           <tr><td><span style={{ color: '#60a5fa', fontWeight: 700 }}>Champion</span></td><td>IV → I</td><td>200,000 – 750,000</td><td>300h – 750h</td></tr>
+          <tr><td><span style={{ color: '#6366f1', fontWeight: 700 }}>High Champion</span></td><td>IV → I</td><td>1,000,000 – 2,000,000</td><td>1,000h – 1,750h</td></tr>
+          <tr><td><span style={{ color: '#f472b6', fontWeight: 700 }}>Paragon</span></td><td>III → I</td><td>2,500,000 – 3,500,000</td><td>2,000h – 2,500h</td></tr>
+          <tr><td><span style={{ color: '#cbd5e1', fontWeight: 700 }}>Vanguard</span></td><td>II → I</td><td>4,000,000 – 5,000,000</td><td>2,750h – 3,000h</td></tr>
+          <tr><td><span style={{ color: '#a855f7', fontWeight: 700 }}>Sovereign</span></td><td>—</td><td>7,500,000</td><td>3,250h</td></tr>
         </tbody>
       </table></ResponsiveTable>
 
@@ -41,7 +45,11 @@ export function RanksOverview() {
           <tr><td>Champion I</td><td>Consume any Divine Fish + Break 1000 Lucky Blocks + Complete 10 Dungeons Solo (Master)</td></tr>
         </tbody>
       </table></ResponsiveTable>
-      <p>Champion ranks are the highest tier. Each rank features unique quest requirements that test different aspects of your Minecraft mastery.</p>
+      <p>Champion ranks each feature unique quest requirements that test different aspects of your Minecraft mastery.</p>
+
+      <h2>Endgame Ranks</h2>
+      <p>After Champion I comes the endgame path: <strong>High Champion → Paragon → Vanguard → Sovereign</strong>. These ranks have no extra tasks. They only need gold and playtime, and every one gives an exclusive title and <strong>+1 Player Vault</strong>. <strong>Sovereign</strong> is the highest rank on the server.</p>
+      <Callout type="info">Starting from Champion IV, every rank you buy adds <strong>+1 Player Vault</strong>.</Callout>
     </>
   );
 }
@@ -68,4 +76,20 @@ export function EliteTier() {
 
 export function ChampionTier() {
   return <RankTierTable {...RANK_TIERS.champion} />;
+}
+
+export function HighChampionTier() {
+  return <RankTierTable {...RANK_TIERS.highChampion} />;
+}
+
+export function ParagonTier() {
+  return <RankTierTable {...RANK_TIERS.paragon} />;
+}
+
+export function VanguardTier() {
+  return <RankTierTable {...RANK_TIERS.vanguard} />;
+}
+
+export function SovereignTier() {
+  return <RankTierTable {...RANK_TIERS.sovereign} />;
 }

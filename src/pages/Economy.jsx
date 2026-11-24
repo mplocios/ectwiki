@@ -15,10 +15,9 @@ export default function Economy() {
         <tbody>
           <tr><td><b>Jobs</b></td><td>Choose up to 3 jobs from 12 available. Earn gold automatically.</td><td><code>/jobs</code></td></tr>
           <tr><td><b>Selling</b></td><td>Sell to NPC shops in Town or use <code>/sell hand</code> for quick sales.</td><td><code>/sell hand</code></td></tr>
-          <tr><td><b>Fishing</b></td><td>Over 130 custom fish across 8 tiers. Sell your catch for gold — rarer fish are worth more. Use <code>/fish menu</code> to get started.</td><td><code>/fish menu</code></td></tr>
+          <tr><td><b>Fishing</b></td><td>324 custom fish across 6 tiers: Bronze, Silver, Gold, Diamond, Platinum and Mythical. Sell your catch at the fish shop. Fish sell for <b>⛂ 100</b> (Bronze) up to <b>⛂ 25,000</b> (Mythical). See the <a href="#guides/fishing" style={{ color: 'var(--gold)', fontWeight: 600 }}>Fishing guide</a> for details.</td><td><code>/fish shop</code></td></tr>
           <tr><td><b>Quests</b></td><td>Daily quests and gathering quests reward gold.</td><td><code>/quests</code></td></tr>
           <tr><td><b>Bank Interest</b></td><td>1% daily interest on bank deposits (max 1M payout).</td><td>Bank NPC</td></tr>
-          <tr><td><b>AFK Rewards</b></td><td>Earn gold passively while online.</td><td>—</td></tr>
         </tbody>
       </table></ResponsiveTable>
 

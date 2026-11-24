@@ -12,8 +12,7 @@ export default function Tips() {
         <li>Fish for rare catches. Custom fish sell for high prices.</li>
         <li>Don't rush to buy ranks. Let your bank interest work for you first.</li>
         <li>Use the Auction House NPC to sell rare items — you'll get more than the server shop price.</li>
-        <li>Going AFK? You earn gold passively just for being online. Higher ranks earn faster.</li>
-        <li>Stack your income: jobs + fishing + bank interest + AFK rewards. It all adds up.</li>
+        <li>Stack your income: jobs + fishing + quests + bank interest. It all adds up.</li>
         <li>Bank interest maxes at 1,000,000 gold per payout. Once you hit that cap, invest in ranks or gear.</li>
       </ol>
 

@@ -534,51 +534,6 @@ export function DeathPenalty() {
   );
 }
 
-export function AfkRewards() {
-  return (
-    <>
-      <h1>AFK Reward System</h1>
-      <p className="page-desc">Earn coins even when you're away from your keyboard. The longer you stay online, the more you earn.</p>
-
-      <h2>How It Works</h2>
-      <p>When you go AFK, you automatically earn <b>1 coin per minute</b> just for being online. After <b>5 minutes</b> of no activity, you'll be marked as AFK automatically — or you can toggle it manually.</p>
-
-      <h2>Commands</h2>
-      <div className="cmd-list">
-        <div className="cmd-row"><code>/afk</code><span className="cmd-desc">Toggle AFK mode manually — use it again to return</span></div>
-        <div className="cmd-row"><code>/checkafk</code><span className="cmd-desc">Check your current AFK status</span></div>
-      </div>
-
-      <h2>Auto-AFK Detection</h2>
-      <p>After <b>5 minutes</b> of no activity, the system automatically marks you as AFK. Activity includes:</p>
-      <ul>
-        <li>Chatting or using commands</li>
-        <li>Moving your character</li>
-        <li>Opening inventories or clicking items</li>
-      </ul>
-      <p>You'll automatically return from AFK when you perform any of these actions. The server announces when you go AFK and when you return.</p>
-
-      <h2>VIP Multipliers</h2>
-      <p>Higher ranks earn more per minute through AFK multipliers:</p>
-      <ResponsiveTable><table className="wiki-table">
-        <thead><tr><th>Multiplier</th><th>Earnings/Min</th><th>Per Hour</th></tr></thead>
-        <tbody>
-          <tr><td>1x (default)</td><td>1 coin</td><td>60 coins</td></tr>
-          <tr><td>1.5x</td><td>1.5 coins</td><td>90 coins</td></tr>
-          <tr><td>2x</td><td>2 coins</td><td>120 coins</td></tr>
-          <tr><td>3x</td><td>3 coins</td><td>180 coins</td></tr>
-          <tr><td>5x</td><td>5 coins</td><td>300 coins</td></tr>
-          <tr><td>10x</td><td>10 coins</td><td>600 coins</td></tr>
-        </tbody>
-      </table></ResponsiveTable>
-
-      <Callout type="tip"><b>Tip:</b> Use <code>/afk</code> before stepping away to start earning immediately. Build an AFK area at your base and let the coins roll in while you're away.</Callout>
-
-      <Callout type="info"><b>Note:</b> You must be AFK for at least 1 minute before rewards start. All earnings are added directly to your wallet balance.</Callout>
-    </>
-  );
-}
-
 export function RenameToken() {
   const gradientText = (colors, text, style = {}) => {
     const chars = text.split('');
