@@ -15,7 +15,7 @@ export default function Rules() {
       <div className="rule-row"><CrossIcon /> No abusing bugs — report them right away in <code>📣•-report</code></div>
       <div className="rule-row"><CrossIcon /> No harassment, hate speech, or toxicity</div>
       <div className="rule-row"><CrossIcon /> No scamming in trades</div>
-      <div className="rule-row"><CrossIcon /> Respect staff decisions</div>
+      <div className="rule-row"><CheckIcon /> Respect staff decisions</div>
       <div className="rule-row"><CheckIcon /> AFK farming is allowed</div>
 
       <Callout type="warn"><b>Found a bug? Report it ASAP.</b> Using a bug or exploit for your own gain instead of reporting it is punishable, even if you didn't cause it.</Callout>

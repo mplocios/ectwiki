@@ -563,9 +563,9 @@ export function RenameToken() {
       <ol>
         <li><b>Right-click</b> (Java) or <b>Long-press</b> (Bedrock) the Rename Token</li>
         <li>Type your desired name in chat (e.g. <code>&6Golden &eSword</code>)</li>
-        <li>Type <code>@</code> to preview how it looks (optional)</li>
+        <li>Type <code>preview</code> to see how it looks (optional)</li>
         <li><b>Hold the item</b> you want to rename — not the token!</li>
-        <li>Type <code>@@</code> to confirm — the token is consumed</li>
+        <li>Type <code>confirm</code> — one token is consumed</li>
       </ol>
 
       <h3>Method 2: Quick Command</h3>
@@ -576,16 +576,17 @@ export function RenameToken() {
       <p>Example: <code>/ui rename &c&lLEGENDARY SWORD</code></p>
 
       <h3>Chat Commands</h3>
+      <p>While renaming, type these words in chat — or use the <code>/rtoken</code> command if chat doesn't respond.</p>
       <ResponsiveTable><table className="wiki-table">
-        <thead><tr><th>Command</th><th>Action</th></tr></thead>
+        <thead><tr><th>Type in chat</th><th>Or use command</th><th>Action</th></tr></thead>
         <tbody>
-          <tr><td><code>@@</code></td><td>Confirm rename (hold item first!)</td></tr>
-          <tr><td><code>@</code></td><td>Preview your name</td></tr>
-          <tr><td><code>##</code></td><td>Cancel and keep your token</td></tr>
+          <tr><td><code>confirm</code></td><td><code>/rtoken confirm</code></td><td>Confirm rename (hold item first!)</td></tr>
+          <tr><td><code>preview</code></td><td><code>/rtoken preview</code></td><td>Preview your name</td></tr>
+          <tr><td><code>cancel</code></td><td><code>/rtoken cancel</code></td><td>Cancel and keep your token</td></tr>
         </tbody>
       </table></ResponsiveTable>
 
-      <Callout type="warn"><b>Important:</b> Hold the item you want to rename <b>before</b> typing <code>@@</code> — not the token! You cannot rename the token itself.</Callout>
+      <Callout type="warn"><b>Important:</b> Hold the item you want to rename <b>before</b> typing <code>confirm</code> — not the token! You cannot rename the token itself. Only <b>one</b> token is used per rename, even if you carry a stack.</Callout>
 
       <h2>Color Codes</h2>
       <p>Use <code>&</code> followed by a code to add color and formatting. Never use <code>§</code> — always use <code>&</code>.</p>
@@ -665,9 +666,11 @@ export function RenameToken() {
       <h2>Troubleshooting</h2>
       <ul>
         <li><b>Colors not showing?</b> — Make sure you're using <code>&</code> not <code>§</code>.</li>
-        <li><b>Typed wrong name?</b> — Just type a new name to replace it, or <code>##</code> to cancel.</li>
-        <li><b>"You must be holding an item!"</b> — Hold the item you want to rename (not the token!) before typing <code>@@</code>.</li>
+        <li><b>Typed wrong name?</b> — Just type a new name to replace it, or <code>cancel</code> to cancel.</li>
+        <li><b>"You must be holding an item!"</b> — Hold the item you want to rename (not the token!) before typing <code>confirm</code>.</li>
         <li><b>Token disappeared but item didn't rename?</b> — Make sure you held the correct item before confirming.</li>
+        <li><b>Stuck in rename mode / chat not responding?</b> — Use <code>/rtoken cancel</code> (or <code>/rtoken confirm</code>). Logging out and back in also ends the session — your token is kept.</li>
+        <li><b>Name starts with a symbol like <code>#</code>, <code>!</code>, <code>$</code>, <code>:</code> or <code>.</code>?</b> — Those are chat-channel shortcuts. Start your name with a color code instead, e.g. <code>&f#1 Sword</code>.</li>
       </ul>
     </>
   );
