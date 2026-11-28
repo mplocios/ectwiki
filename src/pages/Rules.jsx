@@ -1,5 +1,5 @@
 import Callout from '../components/Callout';
-import { CrossIcon } from '../components/Icons';
+import { CheckIcon, CrossIcon } from '../components/Icons';
 
 export default function Rules() {
   return (
@@ -9,11 +9,16 @@ export default function Rules() {
 
       <h2>Global Rules</h2>
       <p>These apply everywhere on the server:</p>
-      <div className="rule-row"><CrossIcon /> No hacking, cheating, or exploiting bugs</div>
+      <div className="rule-row"><CrossIcon /> No hacking or cheating</div>
+      <div className="rule-row"><CrossIcon /> No duping (item or money duplication)</div>
+      <div className="rule-row"><CrossIcon /> No lag machines</div>
+      <div className="rule-row"><CrossIcon /> No abusing bugs — report them right away in <code>📣•-report</code></div>
       <div className="rule-row"><CrossIcon /> No harassment, hate speech, or toxicity</div>
       <div className="rule-row"><CrossIcon /> No scamming in trades</div>
-      <div className="rule-row"><CrossIcon /> No AFK farming or botting</div>
       <div className="rule-row"><CrossIcon /> Respect staff decisions</div>
+      <div className="rule-row"><CheckIcon /> AFK farming is allowed</div>
+
+      <Callout type="warn"><b>Found a bug? Report it ASAP.</b> Using a bug or exploit for your own gain instead of reporting it is punishable, even if you didn't cause it.</Callout>
 
       <h2>Frontier Rules</h2>
       <p>Everything is allowed in the Frontier <b>except cheating</b>. PvP, raiding, stealing, griefing, and trapping are all permitted.</p>
